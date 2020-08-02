@@ -1,4 +1,109 @@
 html{
 
-    background-color: yellow;
+    background-color: #000802;
+}
+
+
+/* Home page  */
+.home-page {
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+.home-page-image {
+    height: 100vh;
+    background: url('/media/home-page-bg.png') no-repeat center top fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.alpha-03 {
+    height: 100%;
+    width: 100%;
+    background-color: #000000a2;
+
+}
+
+.home-header{
+    position: relative;
+    font-size: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:#f5f5f5;
+}
+
+.home-header-sub-1{
+    top: 150px;
+    left: 50px;
+    writing-mode: vertical-rl;
+}
+
+.home-header-sub-2{
+    top: -379px;
+    left: 259px;
+}
+
+.home-header-sub-3{
+    top: -453px;
+    left: 259px;
+    font-size: 74px !important;
+    color: #1db954 !important;
+}
+
+.bg-shape-r{
+    position: absolute;
+    top: -200px;
+    height: 150%;
+    width: 165px;
+    left: 500px;
+    background-color: #1b1b1b28;
+    transform: rotate(30deg);
+}
+
+/*-- NavBar------------------------------*/
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 150px;;
+    padding-right: 0;
+    z-index: 4;
+}
+
+
+.navbar-bg {
+    background-color: rgba(0, 0, 0, 0.0);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 17px;
+    transition: ease-in-out 0.4s;
+}
+
+.nav-item a:hover {
+    color: #1db954;
+}
+
+.nav-toggler-button {
+    color: #f2f2f2;
+    font-size: 27px;
+}
+
+
+
+
+
+/*-- Media Queries----------------*/
+
+@media (max-width: 375px) {
+    .navbar-bg {
+        background-color: rgba(0, 0, 0, 1.0);
+    }
 }

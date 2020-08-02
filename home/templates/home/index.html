@@ -2,5 +2,44 @@
 {% load static %}
 
 {% block content %}
-    <h1 class="display-4 text-success">TESTING HOME !</h1>
+    <header class="container-fluid navbar-container">
+        <nav class="navbar navbar-expand-lg  navbar-bg container-fluid">
+            <a class="navbar-brand" href="#home-href"> <img src="assets/images/Logo.png" class="logo" width="30" height="30" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-ellipsis-v nav-toggler-button"></i>
+            </button>
+            <div class="collapse navbar-collapse  justify-content-start" id="navbarNav">
+                <ul class=" navbar-nav nav-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Subscribe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Merch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Account</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <div class="home page m-0 p-0">
+            <div class="home-page-image">
+                <div class="alpha-03">
+                    <div class="bg-shape-r"></div>
+                    <div class="container p-0 m-0 w-50">
+                    <p class="home-header home-header-sub-1">building</p>
+                    <p class="home-header home-header-sub-2">Your</p>
+                    <p class="home-header home-header-sub-3">Future</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
 {% endblock %}
