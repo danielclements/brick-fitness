@@ -5,8 +5,10 @@
         <div class="home page m-0 p-0">
             <div class="home-page-image">
                 <div class="alpha-03">
-                    <div class="bg-shape-r"></div>
-                    <div class="bg-shape-c"></div>                    
+                    <div class="shape-wrapper">
+                        <div class="bg-shape-r"></div>
+                        <div class="bg-shape-c"></div>  
+                    </div>                  
                     <div class="container p-0 m-0 w-50">
                     <p class="home-header home-header-sub-1">building</p>
                     <p class="home-header home-header-sub-2">Your</p>
@@ -16,4 +18,38 @@
                 </div>
             </div>
         </div>
+        <div class="nutrition-wrapper">
+            <div class="nutrition-bg">
+                <div class="row">
+                        <img class="home-image nutrition-1" src="/media/nutrition-image-1.jpg" alt="Fruit Bowl">
+                        <img class="home-image nutrition-2" src="/media/nutrition-image-2.jpg" alt="Salad Bowl">
+                        <img class="home-image nutrition-3" src="/media/nutrition-image-3.jpg" alt="Food Prep">
+                    <div class="offset-6 col-md-6 d-flex justify-content-end">
+                        <div class="nutrition-text-wrapper">
+                            <h4 class="header nutrion-header">Nutrition Plans</h4>
+                            <p class="nutrition-text">Our nutrition plans are built by exeperts,<br>Designed to be simple and easy to follow<br>
+                            No mater how fast-paced your life may be.</p>
+                            <p class="nutrition-text pt-4">Meal plans will provide you with a 7 day<br>plan that includes 3 meals a day plus<br>
+                            various snacks throughout.</p>
+                            <p class="nutrition-text pt-4">At Brick we strive to include A taste<br> for everyone, from standard meal plans<br>
+                            to vegan friendly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% block postloadjs %}
+
+        <script>
+            //Form Js from bootstrap documentation
+            $(function() {
+                $(document).scroll(function() {
+                    var $nav = $(".navbar-bg");
+                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                });
+            });
+        </script>
+    {% endblock %}
 {% endblock %}
