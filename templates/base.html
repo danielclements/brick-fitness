@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <!-- FontAwesome  -->
         <script src="https://kit.fontawesome.com/710d31c3f2.js" crossorigin="anonymous"></script>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato&family=Permanent+Marker&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
@@ -39,6 +41,33 @@
     <title>Brick Fitness {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
+    <header class="container-fluid navbar-container">
+        <nav class="navbar navbar-expand-lg  navbar-bg container-fluid">
+            <a class="navbar-brand" href="#home-href"> <img src="assets/images/Logo.png" class="logo" width="30" height="30" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-ellipsis-v nav-toggler-button"></i>
+            </button>
+            <div class="collapse navbar-collapse  justify-content-start" id="navbarNav">
+                <ul class=" navbar-nav nav-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Subscribe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Merch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Account</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     {% if messages %}
         <div class="message-container"></div>
     {% endif %}
