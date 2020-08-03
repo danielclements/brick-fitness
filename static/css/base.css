@@ -8,6 +8,8 @@ html{
 .home-page {
     min-height: 100vh;
     max-height: 100vh;
+    overflow: hidden;
+    max-width: 100vh;
 }
 
 .home-page-image {
@@ -78,20 +80,17 @@ html{
 }
 
 /* HomePage/Nutrition-section */
-
-.nutrition-wrapper{
-    height: 100vh;
-    background-color: #f7f5f5;
-    z-index: 10 !important;
-}
-
 .nutrition-bg{
-    height: 100vh;
-    background: url('/media/home-nutrition.png') no-repeat center top fixed; 
+    min-height: 100vh;
+    background: url('/media/home-nutrition.png') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.img-wrapper{
+    position: relative;
 }
 
 .home-image {
@@ -101,21 +100,21 @@ html{
 .nutrition-1{
     left:100px;
     top: 110px;
-    width: 309px;
+    max-width: 320px;
     z-index: 2;
 }
 
 .nutrition-2{
-    left:60px;
-    top: 320px;
-    width:309px;
+    left:400px;
+    top: 330px;
+    max-width: 320px;
     z-index: 3;
 }
 
 .nutrition-3{
-    left: -200px;
-    top: 270px;
-    width: 309px;
+    left: 100px;
+    top: 500px;
+    max-width: 320px;
     z-index: 2;
 }
 
@@ -130,8 +129,7 @@ html{
 }
 
 .nutrition-text-wrapper{
-    padding-right: 40px;
-    padding-top: 130px;
+    padding-top: 100px;
 }
 
 /*-- NavBar------------------------------*/
