@@ -37,3 +37,10 @@ We continually tweak and adjust this template to help give you the best experien
 --------
 
 Happy coding!
+
+
+
+
+https://undraw.co/illustrations SVG illustrations 
+
+https://www.gradientmagic.com/ Background gradients
