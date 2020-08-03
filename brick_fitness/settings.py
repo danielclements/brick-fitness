@@ -22,11 +22,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'home',
+    'merch',
+
+    # Allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'home',
-    'merch',
 ]
 
 MIDDLEWARE = [
