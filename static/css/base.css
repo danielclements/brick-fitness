@@ -218,6 +218,11 @@ html{
 
 .navbar-brand{
     line-height:0.8;
+    transition: transform, 0.2s;
+}
+
+.navbar-brand:hover{
+    transform: scale(1.2)
 }
 
 .nav-item a {

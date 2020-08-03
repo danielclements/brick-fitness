@@ -43,7 +43,7 @@
   <body>
     <header class="container-fluid navbar-container">
         <nav class="navbar navbar-expand-lg  navbar-bg container-fluid pl-5 ">
-            <a class="navbar-brand" href="#home-href">{% include 'includes/logo-svg.html' %}</a>
+            <a class="navbar-brand" href="/">{% include 'includes/logo-svg.html' %}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-ellipsis-v nav-toggler-button"></i>
             </button>
@@ -59,7 +59,7 @@
                         <a class="nav-link" href="">Feed</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Merch</a>
+                        <a class="nav-link" href="{% url 'merch' %}">Merch</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Account</a>
