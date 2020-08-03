@@ -139,6 +139,14 @@ html{
     padding-bottom: 0;
 }
 
+.nav-logo{
+    color:#1db954;
+}
+
+.navbar-brand{
+    line-height:0.8;
+}
+
 .nav-item a {
     font-family: 'Anton', sans-serif;
     text-decoration: none;
