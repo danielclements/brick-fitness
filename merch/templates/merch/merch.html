@@ -3,13 +3,36 @@
 
 
 {% block content %}
-    <section id="merch-wrapper">
-        <div class="row">
-            <div class="col">
-                <div class="">
-                    {{ products }}
-                </div>
+    <section class="workout-bg merch-wrapper">
+        <div class="row m-0">
+            <div class="col p-0">
+                <h2 class="text-center">Merch</h2>
             </div>
+        </div>
+
+        <div class="row product-card-wrapper m-0">
+            {% for product in products %}
+                <div class="col-6 col-md-3 col-lg-3 p-0 mb-3">
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            {% if product.image %}
+                                <a href="">
+                                    <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
+                            {% endif %}
+                        </div>
+                        <div class="product-card-bottom">
+                            <p class="text-muted product-category">{{ product.category }}</p>
+                            <p class="product-name">{{ product.name }}</p>
+                            <p class="align-self-end product-price">{{ product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </section>
 {% endblock %}
