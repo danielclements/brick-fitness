@@ -12,7 +12,7 @@
 
         <div class="row product-card-wrapper m-0">
             {% for product in products %}
-                <div class="col-6 col-md-4 col-lg-3 p-0 pb-1">
+                <div class="col-6 col-md-4 col-lg-3 col-xl-3 p-0 pb-1">
                     <div class="product-card">
                         <div class="product-card-top">
                             {% if product.image %}
@@ -32,6 +32,23 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Logic for horizontal divider by The Code Institute -->                       
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-sm-block d-md-none mb-2 p-0">
+                                <hr style="color: white; background-color: white;">
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-md-block d-lg-none mb-2 p-0">
+                                <hr style="color: white; background-color: white;">
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-lg-block  mb-2 p-0">
+                                <hr style="color: white; background-color: white;">
+                            </div>
+                        {% endif %}
             {% endfor %}
         </div>
     </section>
