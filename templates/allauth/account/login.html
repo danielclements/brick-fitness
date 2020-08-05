@@ -28,7 +28,7 @@
                 {% if socialaccount_providers %}
                 <div class="google-login">
                    <a title="Google" class="google-img text-secondary mr-2" href="/accounts/google/login/">
-                        <img src="https://img.icons8.com/color/30/000000/google-logo.png">
+                        <img class= src="https://img.icons8.com/color/30/000000/google-logo.png">
                         <b>Sign In with Google</b>
                     </a>
                 </div>
@@ -54,8 +54,10 @@
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-            	<a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-                <a href="{{ signup_url }}">sign up</a>
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                    <a href="{{ signup_url }}">sign up</a>
+                </div>
             	<input type="submit" class="btn" value="Login">
             </form>
         </div>

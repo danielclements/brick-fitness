@@ -5,32 +5,43 @@
 {% block content %}
     <section class="workout-bg merch-wrapper">
         <div class="row m-0">
-            <div class="col p-0">
+            <div class="col-12 p-0">
                 <h2 class="text-center text-muted mt-5 mb-5">Merch</h2>
             </div>
-            <div class="col p-0">
-                <div class="sort-filter-wrapper">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </div>
+    <div class="row m-0">
+        <div class="p-0 w-100 d-flex justify-content-between">
+            <div class="dropdown d-flex">
+                <button class="btn btn-secondary btn-filter dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" 
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" 
                             href="{% url 'merch' %}?category=workout_gear,accessories,hoodie,shoes,active_wear">All Categories</a>
 
-                        {% for category in categories_all %}
-                            <a class="dropdown-item" href="{% url 'merch' %}?category={{ category.name }}">
-                            {{ category.friendly_name }}</a>
-                        {% endfor %}
-                        </div>
-                    </div>
+                {% for category in categories_all %}
+                    <a class="dropdown-item" href="{% url 'merch' %}?category={{ category.name }}">
+                    {{ category.friendly_name }}</a>
+                {% endfor %}
                 </div>
             </div>
+
+            <div class="dropdown d-flex">
+            <button class="btn btn-secondary btn-filter dropdown-toggle" type="button" id="dropdownMenuButton-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Name</a>
+                <a class="dropdown-item" href="#">Category</a>
+                <a class="dropdown-item" href="#">Price</a>
+            </div>
+            </div>
         </div>
+    </div>
 
         <div class="row product-card-wrapper m-0">
             {% for product in products %}
-                <div class="col-6 col-md-4 col-lg-3 col-xl-3 p-0 pb-1">
+                <div class="col-6 col-md-4 col-lg-2 col-xl-2 p-0 pb-1">
                     <div class="product-card">
                         <div class="product-card-top">
                             {% if product.image %}
@@ -62,7 +73,7 @@
                                 <hr style="color: white; background-color: white;">
                             </div>
                         {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
+                        {% if forloop.counter|divisibleby:6 %}
                             <div class="col-12 d-none d-lg-block  mb-2 p-0">
                                 <hr style="color: white; background-color: white;">
                             </div>
