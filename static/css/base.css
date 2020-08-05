@@ -262,6 +262,7 @@ html{
     margin-left: 10px;
     margin-right: 10px;
     min-height: 310px;
+    border: 2px solid transparent;
 }
 
 .product-card:hover{
