@@ -88,7 +88,7 @@
     </section>
 
     {% block postloadjs %}
-
+        {{ block.super }}
         <script>
             $(function() {
                 $(document).scroll(function() {

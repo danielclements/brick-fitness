@@ -46,3 +46,5 @@ https://undraw.co/illustrations SVG illustrations
 https://www.gradientmagic.com/ Background gradients
 
 Code for color changing Navbar was taken from Stack Overflow. https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
+
+https://www.youtube.com/watch?v=t-EMinSz_Tk&t=199s lOGIN PAGE original idea from 
