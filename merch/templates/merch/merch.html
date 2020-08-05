@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
-<section id="merch-wrapper">
 
-</section>
+{% block content %}
+    <section id="merch-wrapper">
+        <div class="row">
+            <div class="col">
+                <div class="">
+                    {{ products }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
