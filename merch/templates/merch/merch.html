@@ -8,6 +8,24 @@
             <div class="col p-0">
                 <h2 class="text-center text-muted mt-5 mb-5">Merch</h2>
             </div>
+            <div class="col p-0">
+                <div class="sort-filter-wrapper">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" 
+                            href="{% url 'merch' %}?category=workout_gear,accessories,hoodie,shoes,active_wear">All Categories</a>
+
+                        {% for category in categories_all %}
+                            <a class="dropdown-item" href="{% url 'merch' %}?category={{ category.name }}">
+                            {{ category.friendly_name }}</a>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row product-card-wrapper m-0">
@@ -26,7 +44,7 @@
                             {% endif %}
                         </div>
                         <div class="product-card-bottom">
-                            <p class="text-muted product-category">{{ product.category }}</p>
+                            <p class="text-muted product-category">{{ product.category.friendly_name }}</p>
                             <p class="product-name">{{ product.name }}</p>
                             <p class="product-price">{{ product.price }}</p>
                         </div>
