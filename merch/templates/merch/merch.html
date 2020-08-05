@@ -12,7 +12,7 @@
 
         <div class="row product-card-wrapper m-0">
             {% for product in products %}
-                <div class="col-12 col-md-6 col-lg-3 p-0 pb-3">
+                <div class="col-6 col-md-4 col-lg-3 p-0 pb-1">
                     <div class="product-card">
                         <div class="product-card-top">
                             {% if product.image %}
@@ -28,7 +28,7 @@
                         <div class="product-card-bottom">
                             <p class="text-muted product-category">{{ product.category }}</p>
                             <p class="product-name">{{ product.name }}</p>
-                            <p class="align-self-end product-price">{{ product.price }}</p>
+                            <p class="product-price">{{ product.price }}</p>
                         </div>
                     </div>
                 </div>
