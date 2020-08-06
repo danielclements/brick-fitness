@@ -287,6 +287,109 @@ html{
 .btn-filter{
     font-size: 17px !important;
 }
+
+/* Merch Filtering  */
+
+.merch-navbar{
+    position: fixed;
+    top: 70px;
+}
+
+.merch-navbar form{
+    margin: 0px 40px 0px;
+}
+
+.search-btn{
+    border-top-right-radius : 8px !important;
+    border-bottom-right-radius : 8px !important;
+    height: 38px !important;
+    display: flex;
+}
+
+.search-btn span{
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-100 input{
+ border-top-left-radius : 8px !important;
+ border-bottom-left-radius : 8px !important;
+}
+
+.Sorting-button-merch button, 
+.filter-button-merch button{
+    font-family: 'Lato', sans-serif;
+    background-color: #383838;
+    color: white;
+    height: 38px;
+    width: 60px;
+    border: 1px solid #3a3a3a ;
+    border-radius: 8px;
+} 
+
+.Sorting-button-merch button:hover, 
+.filter-button-merch button:hover{
+    background-color: #1fc95a ;
+    color: #383838 ;
+    border: #185f31;
+}
+
+.Sorting-button-merch, 
+.filter-button-merch {
+    position: relative;
+}
+
+.Sorting-button-merch ul li a, 
+.filter-button-merch ul li a{
+    color: #f3f3f3 ;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    }
+
+.Sorting-button-merch ul li a:hover, 
+.filter-button-merch ul li a:hover{
+    color: #1fc95a ;
+}
+
+
+
+.Sorting-button-merch ul, 
+.filter-button-merch ul{
+    position: absolute;
+    list-style: none;
+    background-color: #383838 ;
+    text-decoration: none;
+    color: #dddddd;
+    padding: 10px;
+    width: 150px;
+    border-radius: 8px;
+    z-index: 11 !important;
+    opacity: 0;
+}
+
+.filter-button-merch ul{
+    left: 0;
+    border-top-left-radius: 0px !important;
+}
+
+.Sorting-button-merch ul{
+    right: 0;
+    border-top-right-radius: 0px !important;
+}
+
+.Sorting-button-merch button:focus,
+.filter-button-merch button:focus{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.Sorting-button-merch button:focus + ul,
+.filter-button-merch button:focus + ul{
+    opacity: 1;
+}
+
+
 /* Misc */
 
 .header, h1, h2, h3, h4, h5, h6 {
