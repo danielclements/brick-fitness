@@ -87,15 +87,3 @@
                 </div>
     </section>
 
-    {% block postloadjs %}
-        {{ block.super }}
-        <script>
-            $(function() {
-                $(document).scroll(function() {
-                    var $nav = $(".navbar-bg");
-                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-                });
-            });
-        </script>
-    {% endblock %}
-{% endblock %}

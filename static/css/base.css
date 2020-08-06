@@ -226,7 +226,7 @@ html{
     font-family: 'Anton', sans-serif;
     text-decoration: none;
     color: #f2f2f2;
-    font-size: 17px;
+    font-size: 19px;
     transition: ease-in-out 0.4s;
 }
 
@@ -245,13 +245,17 @@ html{
 
 }
 
+#navbarNav{
+    padding-right: 80px;
+    padding-left: 46px;
+}
 
 /* Merch Page */
 
 .merch-wrapper{
-    padding-top: 50px;
     padding-left:96px;
     padding-right:96px;
+    padding-top:200px;
 }
 
 
@@ -292,7 +296,10 @@ html{
 
 .merch-navbar{
     position: fixed;
-    top: 70px;
+    top: 40px;
+    z-index: 9999;
+    padding: 15px 0;
+    border-top: 1px solid transparent;
 }
 
 .merch-navbar form{
@@ -389,6 +396,12 @@ html{
     opacity: 1;
 }
 
+.merch-navbar.scrolled {
+    background-color: #161616 !important;
+    transition: background-color 200ms linear;
+    border-top: 1px solid #272727;
+}
+
 
 /* Misc */
 
@@ -482,7 +495,7 @@ p{
     .merch-wrapper{
         padding: 0 15px 0;
     }
-}
+
 
 @media(min-width: 415px) and (max-width: 768px){
     

@@ -5,35 +5,6 @@
 {% block content %}
     {% include 'includes/merch-navbar.html' %}
     <section class="workout-bg merch-wrapper">
-    <div class="row m-0">
-        <div class="p-0 w-100 d-flex justify-content-between">
-            <div class="dropdown d-flex">
-                <button class="btn btn-secondary btn-filter dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Categories
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" 
-                            href="{% url 'merch' %}?category=workout_gear,accessories,hoodie,shoes,active_wear">All Categories</a>
-
-                {% for category in categories_all %}
-                    <a class="dropdown-item" href="{% url 'merch' %}?category={{ category.name }}">
-                    {{ category.friendly_name }}</a>
-                {% endfor %}
-                </div>
-            </div>
-
-            <div class="dropdown d-flex">
-            <button class="btn btn-secondary btn-filter dropdown-toggle" type="button" id="dropdownMenuButton-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sort
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="{% url 'merch' %}?sort=name&direction=asc">Name</a>
-                <a class="dropdown-item" href="{% url 'merch' %}?sort=price&direction=asc">Price</a>
-            </div>
-            </div>
-        </div>
-    </div>
-
         <div class="row product-card-wrapper m-0">
             {% for product in products %}
                 <div class="col-6 col-md-4 col-lg-2 col-xl-2 p-0 pb-1">
@@ -77,3 +48,14 @@
         </div>
     </section>
 {% endblock %}
+{% block postloadjs %}
+    {{ block.super }}
+    <script>
+        $(function() {
+            $(document).scroll(function() {
+                var $nav = $(".merch-navbar");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+     </script>
+    {% endblock %}
