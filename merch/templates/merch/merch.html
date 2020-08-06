@@ -31,9 +31,8 @@
                 Sort
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Name</a>
-                <a class="dropdown-item" href="#">Category</a>
-                <a class="dropdown-item" href="#">Price</a>
+                <a class="dropdown-item" href="{% url 'merch' %}?sort=name&direction=asc">Name</a>
+                <a class="dropdown-item" href="{% url 'merch' %}?sort=price&direction=asc">Price</a>
             </div>
             </div>
         </div>
