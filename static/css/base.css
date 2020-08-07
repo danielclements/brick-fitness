@@ -413,8 +413,26 @@ html{
 
 /* desktop filtering */
 
+.in-row{
+    background-color:  #181818;
+    border: 1px solid rgb(218, 218, 218);
+    color: rgb(218, 218, 218);
+    font-size: 8px;
+    cursor: pointer;
+    height: 38px;
+    width: 74px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.in-row:hover{
+    background-color: rgb(218, 218, 218);
+    color: #181818;
+}
+
 .in-row-active{
-    background-color:  #1db954;
+    color: #1db954
 }
 
 
@@ -431,6 +449,7 @@ html{
 .desktop-sorting ul{
     list-style: none;
 }
+
 
 .sorting-hr{
     width: 92%;

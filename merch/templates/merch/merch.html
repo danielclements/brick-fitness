@@ -34,9 +34,22 @@
     </div>
     <section class="workout-bg merch-wrapper">
         <div class="text-muted mb-2 d-none d-md-flex justify-content-between">
-            <div class="button-sort-wrapper d-none d-lg-inline">
-                <button class="in-row-active" id="in-row-5">5</button>
-                <button id="in-row-6">6</button>
+            <div class="button-sort-wrapper d-none d-lg-flex">
+                <div class="in-row in-row-active d-flex " id="in-row-5">
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                </div>
+                <div class="in-row  d-flex " id="in-row-6">
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                    <i class="fas fa-square-full"></i>
+                </div>
             </div>
             <form method="GET" action="{% url 'merch' %}">
                 <div class="input-group w-100">
