@@ -250,6 +250,13 @@ html{
     padding-left: 46px;
 }
 
+.plans-dropdown{
+    background-color: #0f0f0f;
+}
+
+.plans-link:hover{
+    background-color: #0f0f0f;
+}
 /* Merch Page */
 
 .merch-wrapper{
