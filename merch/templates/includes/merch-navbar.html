@@ -26,12 +26,25 @@
         <div class="Sorting-button-merch">
             <button>Sort</button>
             <ul class="">
-                <li><a href="{% url 'merch' %}?sort=price&direction=asc">Price (Low < High)</a></li>
-                <li><a href="{% url 'merch' %}?sort=name&direction=desc">Name (A-Z)</a></li>
-                <li><a href="{% url 'merch' %}?sort=name&direction=asc">Name (Z-A)</a></li>
-                <li><a href="{% url 'merch' %}?sort=price&direction=desc">Price (High > Low)</a></li>
+                <li><a href="#" id="reset">Reset</a></li>
+                <li><a href="#" id="price_asc">Price (Low < High)</a></li>
+                <li><a href="#" id="name_asc">Name (A-Z)</a></li>
+                <li><a href="#" id="name_desc">Name (Z-A)</a></li>
+                <li><a href="#" id="price_desc">Price (High > Low)</a></li>
             </ul>
-        </div>
-        
+        </div> 
+
+        <!-- <div class="Sorting-button-merch">
+            <button>Sort</button>
+            <select id="sort-selector" class="border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+            </select>
+        </div> -->
 
 </div>

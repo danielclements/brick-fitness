@@ -59,4 +59,62 @@
             });
         });
      </script>
-    {% endblock %}
+
+     <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+    
+    <script type="text/javascript">
+        var price_desc = $("#price_desc")
+        var price_asc = $("#price_asc")
+        var name_asc = $("#name_asc")
+        var desc_name = $("#name_desc")
+        var reset = $("#reset")
+        var currentUrl = new URL(window.location);
+
+
+        $(price_desc).click(function() {
+            var sort = "price"; 
+            var direction = "desc";
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+            });
+        
+        $(price_asc).click(function() {
+            var sort = "price";
+            var direction = "asc";
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+            });
+
+        $(name_asc).click(function() {
+            var sort = "name";
+            var direction = "asc";
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+            });
+
+        $(name_desc).click(function() {
+            var sort = "name";
+            var direction = "desc";
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+            });
+        
+        $(reset).click(function() {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+            window.location.replace(currentUrl);
+            });
+    </script>
+{% endblock %}
