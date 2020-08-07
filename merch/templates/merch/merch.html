@@ -63,7 +63,9 @@
                     </div>
                 </div>
             </form>
-            {{ products|length }} Products{% if search_term %} found for <strong class="mb-4">"{{ search_term }}"</strong>{% endif %}
+            <div>
+                {{ products|length }} Products{% if search_term %} found for <strong class="mb-4">"{{ search_term }}"</strong>{% endif %}
+            </div>
         </div>
         <hr class="sorting-hr w-100">
         <div class="row product-card-wrapper m-0">
