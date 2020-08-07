@@ -12,11 +12,12 @@ from .models import Product, Category, Color
 def all_merch(request):
     """ This view returns the Merch page """
     products = Product.objects.all()
-    color = Color.objects.all()
+    all_colors = Color.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
+    color = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -49,6 +50,10 @@ def all_merch(request):
                 description__icontains=query)
             products = products.filter(queries)
 
+        if 'color' in request.GET:
+            colors = request.GET['color'].split(',')
+            products = products.filter(color__name__in=colors)
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -56,7 +61,7 @@ def all_merch(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
-        'color': color,
+        'all_colors': all_colors,
     }
 
     return render(request, 'merch/merch.html', context)

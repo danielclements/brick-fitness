@@ -197,7 +197,7 @@ html{
     left: 0;
     padding-left: 0;
     padding-right: 0;
-    z-index: 9999;
+    z-index: 10000;
 }
 
 
@@ -205,6 +205,7 @@ html{
     background-color: rgba(0, 0, 0, 0.0);
     padding-top: 0;
     padding-bottom: 0;
+    padding-left: 48px;
 }
 
 .nav-logo{
@@ -252,6 +253,7 @@ html{
 
 .plans-dropdown{
     background-color: #0f0f0f;
+    border: none !important;
 }
 
 .plans-link:hover{
@@ -260,7 +262,7 @@ html{
 /* Merch Page */
 
 .merch-wrapper{
-    padding: 200px 96px 0;
+    padding: 100px 96px 0 310px;
 }
 
 
@@ -354,14 +356,17 @@ html{
 }
 
 .Sorting-button-merch ul li a, 
-.filter-button-merch ul li a{
+.filter-button-merch ul li a,
+.sorting-link{
     color: #f3f3f3 ;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
+    text-transform: capitalize;
     }
 
 .Sorting-button-merch ul li a:hover, 
-.filter-button-merch ul li a:hover{
+.filter-button-merch ul li a:hover,
+.sorting-link:hover{
     color: #1fc95a ;
 }
 
@@ -407,7 +412,29 @@ html{
     border-top: 1px solid #272727;
 }
 
+/* desktop filtering */
 
+.in-row-3-active{
+    background-color: green;
+}
+
+.desktop-sorting{
+    position: fixed;
+    top: 100px;
+    left: 96px;
+    width: 200px;
+    height: 700px;
+    border-right: 1px solid grey;
+}
+
+.desktop-sorting ul{
+    list-style: none;
+}
+
+.sorting-hr{
+    width: 92%;
+    background-color: darkgray;
+}
 /* Misc */
 
 .header, h1, h2, h3, h4, h5, h6 {
