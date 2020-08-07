@@ -60,7 +60,7 @@
                         <a class="nav-link" href="">Feed</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'merch' %}">Merch</a>
+                        <a class="nav-link" href="{% url 'merch' %}?category=workout_gear,accessories,hoodie-jumper,shoes,active_wear">Merch</a>
                     </li>
                     {% if request.user.is_authenticated %}
                         <li class="nav-item">

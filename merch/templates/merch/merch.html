@@ -5,6 +5,7 @@
 {% block content %}
     {% include 'includes/merch-navbar.html' %}
     <section class="workout-bg merch-wrapper">
+        {{ products|length }} Products{% if search_term %} found for <strong class="mb-4">"{{ search_term }}"</strong>{% endif %}
         <div class="row product-card-wrapper m-0">
             {% for product in products %}
                 <div class="col-6 col-md-4 col-lg-2 col-xl-2 p-0 pb-1">

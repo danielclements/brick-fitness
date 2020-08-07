@@ -2,11 +2,13 @@
         <div class="filter-button-merch">
             <button>Filter</button>
             <ul class="">
-                <li><a href="{% url 'merch' %}?category=workout_gear,accessories,hoodie,shoes,active_wear">All Categories</a></li>
-                {% for category in categories_all %}
-                    <li><a href="{% url 'merch' %}?category={{ category.name }}">
-                    {{ category.friendly_name }}</a></li>
-                {% endfor %}
+                <li><a href="{% url 'merch' %}?category=workout_gear,accessories,hoodie-jumper,shoes,active_wear">All Categories</a></li>
+                <li><a href="{% url 'merch' %}?category=active_wear">Activewear</a></li>
+                <li><a href="{% url 'merch' %}?category=hoodie-jumper">Jumpers</a></li>
+                <li><a href="{% url 'merch' %}?category=shoes">shoes</a></li>
+                <li><a href="{% url 'merch' %}?category=accessories">Accessories</a></li>
+                <li><a href="{% url 'merch' %}?category=workout_gear">Workout Gear</a></li>
+
             </ul>
         </div>
         <form method="GET" action="{% url 'merch' %}">
@@ -24,10 +26,12 @@
         <div class="Sorting-button-merch">
             <button>Sort</button>
             <ul class="">
-                <li><a href="{% url 'merch' %}?sort=price&direction=asc">Price [Low < High]</a></li>
-                <li><a href="{% url 'merch' %}?sort=name&direction=desc">Name [Desc]</a></li>
-                <li><a href="{% url 'merch' %}?sort=name&direction=asc">Name [Asc]</a></li>
-                <li><a href="{% url 'merch' %}?sort=price&direction=desc">Price [High > Low]</a></li>
+                <li><a href="{% url 'merch' %}?sort=price&direction=asc">Price (Low < High)</a></li>
+                <li><a href="{% url 'merch' %}?sort=name&direction=desc">Name (A-Z)</a></li>
+                <li><a href="{% url 'merch' %}?sort=name&direction=asc">Name (Z-A)</a></li>
+                <li><a href="{% url 'merch' %}?sort=price&direction=desc">Price (High > Low)</a></li>
             </ul>
         </div>
+        
+
 </div>
