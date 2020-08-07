@@ -34,9 +34,9 @@
     </div>
     <section class="workout-bg merch-wrapper">
         <div class="text-muted mb-2 d-none d-md-flex justify-content-between">
-            <div class="button-sort-wrapper">
-                <button id="in-row-3">3</button>
-                <button id="in-row-4">4</button>
+            <div class="button-sort-wrapper d-none d-lg-inline">
+                <button class="in-row-active" id="in-row-5">5</button>
+                <button id="in-row-6">6</button>
             </div>
             <form method="GET" action="{% url 'merch' %}">
                 <div class="input-group w-100">
@@ -55,7 +55,7 @@
         <hr class="sorting-hr w-100">
         <div class="row product-card-wrapper m-0">
             {% for product in products %}
-                <div id="card-merch" class="col-6 col-md-4 col-lg-2  p-0 pb-1">
+                <div class="col-6 col-md-4  card-in-row-5  p-0 pb-1 card-merch">
                     <div class="product-card">
                         <div class="product-card-top">
                             {% if product.image %}
@@ -149,8 +149,16 @@
     </script>
 
     <script type="text/javascript">
-        $("#in-row-3").click(function() {
-            $(this).addClass("in-row-3-active")
+        $("#in-row-5").click(function() {
+            $(this).addClass("in-row-active");
+            $("#in-row-6").removeClass("in-row-active");
+            $(".card-merch").addClass("card-in-row-5").removeClass("col-lg-2");
+            });
+
+        $("#in-row-6").click(function() {
+            $(this).addClass("in-row-active");
+            $("#in-row-5").removeClass("in-row-active");
+            $(".card-merch").addClass("col-lg-2").removeClass("card-in-row-5");
             });
     </script>
 
