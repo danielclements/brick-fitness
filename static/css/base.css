@@ -348,46 +348,12 @@ p{
         color: #f5f5f5 !important;
     }
 
- 
-    .merch-wrapper{
-        padding: 150px 15px 0;
-    }
-
-    .merch-navbar form{
-        margin: 0px 15px 0px;
-    }
-
-    .Sorting-button-merch button, 
-    .filter-button-merch button{
-        font-size: 14px;
-        width: 50px;
-    } 
-
-    .merch-navbar{
-        top: 37px;
-    }
-
-    .filter-button-merch{
-        margin-left: 1rem;
-    }
-    .Sorting-button-merch{
-        margin-right: 1rem
-    }
-
 }
 @media(min-width: 415px) and (max-width: 768px){
-    
-    .merch-wrapper{
-        padding: 200px 25px 0;
-    }
 
     .btn-filter{
         font-size: 13px !important;
     }
-
-    .merch-navbar form{
-    margin: 0px 30px 0px;
-}
 }
 
 @media(max-width:1024px){

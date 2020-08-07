@@ -194,3 +194,60 @@
     width: 92%;
     background-color: darkgray;
 }
+
+/*-- Media Queries----------------*/
+
+@media (max-width: 414px) {
+
+    .merch-navbar form{
+        margin: 0px 15px 0px;
+    }
+
+    .Sorting-button-merch button, 
+    .filter-button-merch button{
+        font-size: 14px;
+        width: 50px;
+    } 
+
+    .merch-navbar{
+        top: 37px;
+    }
+
+    .filter-button-merch{
+        margin-left: 1rem;
+    }
+    .Sorting-button-merch{
+        margin-right: 1rem
+    }
+
+    .merch-wrapper{
+        padding: 100px 25px 0;
+    }
+
+}
+@media(min-width: 415px) and (max-width: 768px){
+    
+    .merch-wrapper{
+        padding: 100px 25px 0;
+    }
+
+    .btn-filter{
+        font-size: 13px !important;
+    }
+
+    .merch-navbar form{
+    margin: 0px 30px 0px;
+    }
+
+    .merch-navbar{
+        top: 37px;
+    }
+}
+
+
+@media(min-width:1024px){
+    .card-in-row-5{
+        flex: 0 0 20% !important;
+        max-width: 20% !important;
+}
+}
