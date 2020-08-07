@@ -5,11 +5,11 @@ from .models import Product, Category, Color
 # Register your models here.
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'sku',
         'name',
         'category',
         'color',
         'price',
+        'sku',
         'image',
     )
 
