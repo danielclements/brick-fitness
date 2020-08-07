@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models.functions import Lower
 from django.db.models import Q
 
-from .models import Product, Category
+from .models import Product, Category, Color
 
 
 # Create your views here.
@@ -12,6 +12,7 @@ from .models import Product, Category
 def all_merch(request):
     """ This view returns the Merch page """
     products = Product.objects.all()
+    color = Color.objects.all()
     query = None
     categories = None
     sort = None
@@ -55,6 +56,7 @@ def all_merch(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'color': color,
     }
 
     return render(request, 'merch/merch.html', context)
