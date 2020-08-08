@@ -65,10 +65,7 @@
     align-items: center;
 }
 
-.w-100 input{
- border-top-left-radius : 8px !important;
- border-bottom-left-radius : 8px !important;
-}
+
 
 .Sorting-button-merch button, 
 .filter-button-merch button{
@@ -224,6 +221,11 @@
         padding: 100px 25px 0;
     }
 
+    .w-100 input{
+        border-top-left-radius : 8px !important;
+        border-bottom-left-radius : 8px !important;
+}
+
 }
 @media(min-width: 415px) and (max-width: 768px){
     
@@ -241,6 +243,11 @@
 
     .merch-navbar{
         top: 37px;
+    }
+
+    .w-100 input{
+    border-top-left-radius : 8px !important;
+    border-bottom-left-radius : 8px !important;
     }
 }
 
