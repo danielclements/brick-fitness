@@ -256,5 +256,10 @@
     .card-in-row-5{
         flex: 0 0 20% !important;
         max-width: 20% !important;
-}
+    }
+
+    .q-submit{
+        border-radius: 0px !important;
+    }
+
 }
