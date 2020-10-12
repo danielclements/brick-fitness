@@ -59,28 +59,27 @@ html{
 .arrow-top {
     width: 10px;
     height: 10px;
-    border-right: solid 2px;
-    border-bottom: solid 2px;
-    transform: rotate(45deg);
+    border: solid 2px;
+    border-radius: 50%;
     animation: arrows 1.5s ease-in-out infinite;
+    margin-bottom: 3px;
 }
 
 .arrow-mid {
     width: 10px;
     height: 10px;
-    border-right: solid 2px;
-    border-bottom: solid 2px;
-    transform: rotate(45deg);
+    border: solid 2px;
+    border-radius: 50%;
     animation: arrows 1.5s ease-in-out infinite;
     animation-delay: 0.5s;
+    margin-bottom: 3px;
 }
 
 .arrow-bottom {
     width: 10px;
     height: 10px;
-    border-right: solid 2px;
-    border-bottom: solid 2px;
-    transform: rotate(45deg);
+    border: solid 2px;
+    border-radius: 50%;
     animation: arrows 1.5s ease-in-out infinite;
     animation-delay: 1s;
 }
