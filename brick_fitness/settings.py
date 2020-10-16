@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'home',
     'merch',
+    'subscriptions',
 
     # Allauth
     'allauth',
