@@ -2,10 +2,29 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'merch/css/merch.css' %}">
+    <link rel="stylesheet" href="{% static 'subscriptions/css/subscriptions.css' %}">
 {% endblock %}
-    <h1> TEST SUB PAGE</h1>
 
 {% block content %}
-
+    <section class="subsription-plans-main-wrapper">
+        <h1 class="text-center pt-5">subscription Plans</h1>
+        <div class="row plans-wrapper">
+            <div class="col-sm-6 basic-plan-wrapper">
+                <ul class="list-group-item home-text">
+                    <li class="">Basic Meal Plans</li>
+                    <li class="">Basic Workout Plans</li>
+                    <li class="">Premium Plans</li>
+                    <li class="">10% Store Discount</li>
+                </ul>
+            </div>
+            <div class="col-sm-6 pro-plan-wrapper">
+                 <ul class="list-group-item home-text">
+                    <li class="">Basic Meal Plans</li>
+                    <li class="">Basic Workout Plans</li>
+                    <li class="">Premium Plans</li>
+                    <li class="">10% Store Discount</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 {% endblock %}
