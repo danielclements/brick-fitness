@@ -4,21 +4,34 @@
 }
 
 .plans-wrapper{
-    padding-top: 300px;
+    padding-top: 175px;
     margin: 0;
 }
 
-.basic-plan-wrapper{
-    border-right: 1px solid rgb(31, 31, 31);
-    min-height: 100px;
-} 
-.pro-plan-wrapper{
-    border-left: 1px solid rgb(31, 31, 31);
-    min-height: 100px;
-}
+
 
 .list-group-item{
     background-color: transparent;
     color: #969696;
     border: none;
+    list-style-type:none;
+    line-height: 2.5;
+    font-size: 15px;
+}
+
+.sub-cards{
+    min-height: 266px;
+    -webkit-box-shadow: inset -11px -8px 68px -21px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset -11px -8px 68px -21px rgba(0,0,0,0.75);
+    box-shadow: inset -11px -8px 68px -21px rgba(0,0,0,0.75);
+    border-radius: 17px;
+    border: none;
+}
+.basic-card{
+    background-color: #7b4cb9;
+
+}
+
+.pro-card{
+    background-color: #4cb992;
 }
