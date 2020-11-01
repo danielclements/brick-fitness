@@ -8,6 +8,12 @@
     margin: 0;
 }
 
+.cards-wrapper{
+    -webkit-box-shadow: 11px 14px 38px -16px rgba(0,0,0,0.39);
+    -moz-box-shadow: 11px 14px 38px -16px rgba(0,0,0,0.39);
+    box-shadow: 11px 14px 38px -16px rgba(0,0,0,0.39);
+    width:18rem;
+}
 
 
 .list-group-item{
@@ -20,12 +26,16 @@
 }
 
 .sub-cards{
-    min-height: 266px;
+    min-height: 200px;
     -webkit-box-shadow: inset -11px -8px 68px -21px rgba(0,0,0,0.75);
     -moz-box-shadow: inset -11px -8px 68px -21px rgba(0,0,0,0.75);
     box-shadow: inset -11px -8px 68px -21px rgba(0,0,0,0.75);
-    border-radius: 17px;
+    border-radius: 3px 3px 0px 0px;
     border: none;
+}
+.sub-includes-wrapper{
+    background-color: white;
+    border-radius: 0px 0px 3px 3px;
 }
 .basic-card{
     background-color: #7b4cb9;
@@ -33,5 +43,5 @@
 }
 
 .pro-card{
-    background-color: #4cb992;
+    background-color: #1ec056;
 }
