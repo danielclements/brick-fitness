@@ -34,6 +34,7 @@ class Meal(models.Model):
 class MealPlan(models.Model):
     name = models.CharField(max_length=254)
     length = models.CharField(max_length=100, default='7 Days')
+    description = models.CharField(max_length=300, default="description pending")
     Monday = models.ManyToManyField("Meal", related_name='+')
     Tuesday = models.ManyToManyField("Meal", related_name='+')
     wednesday = models.ManyToManyField("Meal", related_name='+')
