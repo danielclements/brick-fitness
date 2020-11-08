@@ -15,6 +15,7 @@ class MealAdmin(admin.ModelAdmin):
         'meal_type',
         'calories',
         'ingredients',
+        'meal_img',
     )
 
 
