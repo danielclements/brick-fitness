@@ -8,5 +8,9 @@
 {% block content %}
     <section class="">
             <h1>TEST TITLE</h1>
+
+    {% for item in mealplans %}
+         <H1>{{ item.name }}</H1>
+    {%   endfor %}
     </section> 
 {% endblock %}
