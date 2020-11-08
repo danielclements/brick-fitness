@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'merch',
     'subscriptions',
     'plans',
+    'user_profiles',
 
     # Allauth
     'allauth',
