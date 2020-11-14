@@ -1,8 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'user_profiles/css/user_profiles.css' %}">
+{% endblock %}
 
 
 {% block content %}
-      {{ profile.phone_number }}
+    <section class="profiles-main-wrapper">
+        <div class="row profiles-row-1 m-0">
+            <div class="col-md-6 offset-md-1 border pt-3">
+                <div class="img-wrapper">
+                    <img src="{{ profile.profile_img.url }}" alt="" class="profile-pic ">
+                </div>
+                <div class="profile-data-wrapper">
+                    <p class="profile-full-name">{{ profile.user.get_full_name }}</p>
+                    <p class="profile-username text-muted"> {{ profile.user }}</p>
+                    {% if profile.subscription_premium == True %}
+                        <p class="profile-subscription-type">Subscription: <span class="sub-type-premium">Premium</span></p>
+                    {% else %}
+                        <p class="profile-subscription-type">Subscription: <span class="sub-type-free">Free</span></p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-3 offset-md-1 border "></div>
+        </div>
+    </section>
 {% endblock %}

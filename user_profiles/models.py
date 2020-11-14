@@ -7,7 +7,8 @@ from django.db.models.signals import post_save
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=11, null=True, blank=True, default="00000000000")
-    profile_img = models.ImageField(default='default-profile-img.jpg', upload_to='profile_pics')
+    profile_img = models.ImageField(default='default-profile-img.png', upload_to='profile_pics')
+    subscription_premium = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username

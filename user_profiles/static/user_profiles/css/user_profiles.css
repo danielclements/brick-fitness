@@ -1,0 +1,52 @@
+.profiles-main-wrapper{
+    min-height: 100vh;
+    background-color: #242323;
+}
+
+.profiles-row-1{
+    padding-top: 75px;
+}
+
+.profiles-row-1 > .border{
+    min-height: 175px;
+    display: flex;
+}
+
+.img-wrapper{
+    flex: 1;
+    max-width: 200px;
+}
+.profile-pic{
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    border: solid 2px #1f1f1f;
+}
+
+.profile-full-name{
+    font-size: 1.9rem;
+    padding-bottom: 0px !important;
+    margin: 0 !important;
+    color: #f9f9f9;
+    line-height: 1.1;
+    padding-top: 7px;
+}
+
+.profile-username{
+    text-transform: capitalize;
+    font-size: 1.17rem;
+}
+
+.profile-subscription-type{
+    font-size: 1.4rem;
+    color: #dddddd;
+    line-height: 0.7;
+}
+
+.sub-type-premium{
+    color: #1db954;
+}
+
+.sub-type-free{
+    color: #fb4646;
+}
