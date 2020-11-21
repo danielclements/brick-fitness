@@ -1,0 +1,33 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
+{% endblock %}
+
+{% block content %}
+
+   <div class="bag-main-wrapper">
+{#        <div class="row pt-5 m-0">#}
+{#            <div class="col">#}
+{#                <hr>#}
+{#                <h4 class="text-light text-center">Cart</h4>#}
+{#                <hr>#}
+{#            </div>#}
+{#        </div>#}
+
+    	<div class="row m-0 pt-5">
+            <div class="col d-flex justify-content-center">
+                <div class="empty-cart-card d-flex justify-content-center">
+                    <div class="img-container d-flex justify-content-center pt-5">
+                        <img class="empty-cart-svg" src="/media/undraw_Taken_re_yn20.svg">
+                    </div>
+
+		        </div>
+
+            </div>
+    </div>
+
+    </div>
+
+{% endblock %}
