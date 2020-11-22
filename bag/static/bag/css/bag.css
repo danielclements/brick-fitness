@@ -10,6 +10,7 @@
 
 .empty-cart-wrapper{
     min-height: 100vh;
+    padding-top: 100px;
 }
 
 .store-button{
@@ -25,4 +26,14 @@
     background-color: #189b46;
     text-decoration: none !important;
     color: white !important;
+}
+
+
+.products-wrapper{
+    border-radius: 5px;
+    background-color: #dddddd;
+}
+
+.product-img{
+    max-width: 125px;
 }

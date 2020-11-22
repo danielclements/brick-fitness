@@ -7,9 +7,34 @@
 
 {% block content %}
    <div class="bag-main-wrapper">
-    	<div class="row m-0 empty-cart-wrapper">
+    	<div class="row m-0 empty-cart-wrapper ">
             {% if bag_items %}
-
+                <div class="products-wrapper container-fluid m-5">
+                     <h4 class="text-center pt-4">Shopping Bag</h4>
+                    <hr class="ml-4 mr-4">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th class="border-0" scope="col">Qty</th>
+                            <th class="border-0" scope="col">Product</th>
+                            <th class="border-0" scope="col"></th>
+                            <th class="border-0" scope="col">Price</th>
+                            <th class="border-0" scope="col">Sub Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for item in bag_items %}
+                            <tr>
+                                <th scope="row"> {{ item.quantity }}</th>
+                                <td class="w-25"><img class="img-fluid" src="{{ item.product.image.url }}" alt=""></td>
+                                <td>{{ item.product.name }}</td>
+                                <td>{{ item.product.price }}</td>
+                                <td>@mdo</td>
+                            </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
             {% else %}
             <div class="col d-flex justify-content-center align-items-center flex-column">
                 <img class="empty-cart-svg " src="/media/undraw_Taken_re_yn20.svg">
