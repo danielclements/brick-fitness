@@ -4,14 +4,25 @@
 }
 
 .empty-cart-svg {
-    max-width:80%;
-    max-hiehgt: 80%;
+    max-width:35%;
+    max-height: 35%;
 }
 
+.empty-cart-wrapper{
+    min-height: 100vh;
+}
 
+.store-button{
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    background-color: #1db954;
+    color: white;
+}
 
-.img-container {
-    height: 300px;
-    width: 300px;
-
+.store-button:hover{
+    background-color: #189b46;
+    text-decoration: none !important;
+    color: white !important;
 }
