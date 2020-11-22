@@ -8,12 +8,17 @@
 {% block content %}
    <div class="bag-main-wrapper">
     	<div class="row m-0 empty-cart-wrapper">
+            {% if bag_items %}
+
+            {% else %}
             <div class="col d-flex justify-content-center align-items-center flex-column">
                 <img class="empty-cart-svg " src="/media/undraw_Taken_re_yn20.svg">
                 <h5 class=" text-light pt-3">Your Cart Is Empty!</h5>
                 <p class="pl-3 pr-3 pt-0 text-light">Looks Like The Aliens Stole Your Items</p>
                 <a href="#" class="store-button store-a-link d-flex align-items-center justify-content-center">Visit Store</a>
             </div>
+            {% endif %}
         </div>
+
    </div>
 {% endblock %}
