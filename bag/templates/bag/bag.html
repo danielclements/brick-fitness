@@ -19,17 +19,15 @@
                             <th class="border-0" scope="col">Product</th>
                             <th class="border-0" scope="col"></th>
                             <th class="border-0" scope="col">Price</th>
-                            <th class="border-0" scope="col">Sub Total</th>
                         </tr>
                       </thead>
                       <tbody>
                         {% for item in bag_items %}
                             <tr>
-                                <th scope="row"> {{ item.quantity }}</th>
-                                <td class="w-25"><img class="img-fluid" src="{{ item.product.image.url }}" alt=""></td>
+                                <td scope="row"> {{ item.quantity }}</td>
+                                <td class="w-25"><img class="img-fluid w-50" src="{{ item.product.image.url }}" alt=""></td>
                                 <td>{{ item.product.name }}</td>
-                                <td>{{ item.product.price }}</td>
-                                <td>@mdo</td>
+                                <th>£{{ item.product.price }}</th>
                             </tr>
                         {% endfor %}
                       </tbody>
