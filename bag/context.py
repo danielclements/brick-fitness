@@ -19,6 +19,7 @@ def bag_contents(request):
             'item_id': item_id,
             'quantity': quantity,
             'product': product,
+            'item_total': total,
         })
 
     if Profile.subscription_premium == True:
