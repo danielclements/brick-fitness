@@ -12,24 +12,36 @@
                 <div class="products-wrapper container-fluid m-5">
                      <h4 class="text-center pt-4">Shopping Bag</h4>
                     <hr class="ml-4 mr-4">
-                    <table class="table">
+                    <table class="table p-3">
                       <thead>
                         <tr>
-                            <th class="border-0" scope="col">Qty</th>
                             <th class="border-0" scope="col">Product</th>
                             <th class="border-0" scope="col"></th>
                             <th class="border-0" scope="col">Price</th>
+                            <th class="border-0" scope="col">Qty</th>
+                            <th class="border-0" scope="col">Subtotal</th>
                         </tr>
                       </thead>
                       <tbody>
                         {% for item in bag_items %}
                             <tr>
+                                <td class="w-25"><img class="img-fluid w-75" src="{{ item.product.image.url }}" alt=""></td>
+                                <th>{{ item.product.name }}</th>
+                                <td class="w-25">£{{ item.product.price }}</td>
                                 <td scope="row"> {{ item.quantity }}</td>
-                                <td class="w-25"><img class="img-fluid w-50" src="{{ item.product.image.url }}" alt=""></td>
-                                <td>{{ item.product.name }}</td>
-                                <th>£{{ item.product.price }}</th>
+                                <td>£{{ item.total }}</td>
                             </tr>
                         {% endfor %}
+
+{#                            CODE INSTITUTE CODE #}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-right">
+                                    <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                </td>
+                            </tr>
+{#                      end of CODE INSTITUE CODE #}
                       </tbody>
                     </table>
                 </div>

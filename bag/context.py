@@ -1,6 +1,7 @@
-from user_profiles.models import Profile
 from django.shortcuts import get_object_or_404
+from decimal import Decimal
 from merch.models import Product
+from user_profiles.models import Profile
 
 
 def bag_contents(request):
@@ -20,10 +21,10 @@ def bag_contents(request):
             'product': product,
         })
 
-    if Profile.subscription_premium:
+    if Profile.subscription_premium == True:
         delivery = 0
     else:
-        delivery = 5.99
+        delivery = Decimal(5.99)
 
     grand_total = delivery + total
 
