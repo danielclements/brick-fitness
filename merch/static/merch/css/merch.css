@@ -1,5 +1,8 @@
 /* Merch Page */
 
+
+
+
 .merch-wrapper{
     padding: 100px 96px 0 310px;
 }
@@ -192,6 +195,7 @@
     background-color: darkgray;
 }
 
+
 /*-- Media Queries----------------*/
 
 @media (max-width: 414px) {
@@ -250,6 +254,8 @@
     border-bottom-left-radius : 8px !important;
     }
 }
+
+
 
 
 @media(min-width:1024px){

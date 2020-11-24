@@ -10,8 +10,8 @@
        <h4 class="text-center text-light pt-5">Shopping Bag</h4>
     	<div class="row m-0 empty-cart-wrapper">
             {% if bag_items %}
-                <div class="products-wrapper offset-md-2 col-md-8 p-5">
-                    <table class="table p-3 text-light">
+                <div class="products-wrapper col-12 offset-0  offset-md-2 col-md-8 pb-0 p-4">
+                    <table class="table p-3 text-light mb-0">
                       <thead>
                         <tr>
                             <th class="border-0" scope="col">Product</th>
@@ -26,9 +26,44 @@
                             <tr>
                                 <td class="w-25"><img class="img-fluid w-75" src="{{ item.product.image.url }}" alt=""></td>
                                 <th>{{ item.product.name }}</th>
-                                <td class="w-25">£{{ item.product.price }}</td>
-                                <td scope="row"> {{ item.quantity }}</td>
-                                <td>£{{ item.item_total }}</td>
+                                <td >£{{ item.product.price }}</td>
+{#                                Code institute Code #}
+                                <td class="py-3 w-25">
+                                        <form class="form update-form" method="POST" action="">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                            <span>
+                                                                <i class="fas fa-minus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <input class="form-control form-control-sm qty_input" type="number"
+                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                        data-item_id="{{ item.item_id }}"
+                                                        id="id_qty_{{ item.item_id }}">
+                                                    <div class="input-group-append">
+                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                            <span>
+                                                                <i class="fas fa-plus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    {% if item.product.has_sizes %}
+                                                        <input type="hidden" name="product_size" value="{{ item.size }}">
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <a class="update-link text-info"><small>Update</small></a>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
+                                    </td>
+{#                            End of code insittue code #}
+                                <td>£{{ item.product.price }}</td>
                             </tr>
                         {% endfor %}
 
@@ -45,12 +80,12 @@
                     </table>
                 </div>
             {% else %}
-            <div class="col-10 offset-1 d-flex justify-content-center align-items-center flex-column">
-                <img class="empty-cart-svg " src="/media/undraw_Taken_re_yn20.svg">
-                <h5 class=" text-light pt-3">Your Cart Is Empty!</h5>
-                <p class="pl-3 pr-3 pt-0 text-light">Looks Like The Aliens Stole Your Items</p>
-                <a href="{% url 'merch' %}?category=workout_gear,accessories,hoodie-jumper,shoes,active_wear"" class="store-button store-a-link d-flex align-items-center justify-content-center">Visit Store</a>
-            </div>
+                <div class="col-10 offset-1 d-flex justify-content-center align-items-center flex-column">
+                    <img class="empty-cart-svg " src="/media/undraw_Taken_re_yn20.svg">
+                    <h5 class=" text-light pt-3">Your Cart Is Empty!</h5>
+                    <p class="pl-3 pr-3 pt-0 text-light">Looks Like The Aliens Stole Your Items</p>
+                    <a href="{% url 'merch' %}?category=workout_gear,accessories,hoodie-jumper,shoes,active_wear" class="store-button store-a-link d-flex align-items-center justify-content-center">Visit Store</a>
+                </div>
             {% endif %}
         </div>
 
