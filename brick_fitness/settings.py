@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'plans',
     'user_profiles',
     'bag',
+    'checkout',
 
 
     # Allauth
