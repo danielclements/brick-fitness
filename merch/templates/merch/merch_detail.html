@@ -14,8 +14,8 @@
         </div>
 
         <div class="row product-card-wrapper m-0">
-            <div class="col-10 offset-1 col-md-5 offset-md-0">
-                <div class="m-5">
+            <div class="col-10 offset-1 col-md-3 offset-md-2 ">
+                <div class="">
                     {% if product.image %}
                             <a href="{{ product.image.url }}" target="_blank">
                                 <img class="img-fluid w-75" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -27,9 +27,9 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-10 offset-1 col-md-7 offset-md-0">
-                <p>{{ product.name }}</p>
-                <p class="tet-muted">{{ product.price }}</p>
+            <div class="col-12 col-md-5 offset-md-0">
+                <p class="text-light"><strong>{{ product.name }}</strong></p>
+                <p class="text-light">{{ product.price }}</p>
                 <p>{{ product.description }}</p>
                 {#       code institute provided code #}
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -76,13 +76,13 @@
                                         </div>
 
                                     <div class="">
-                                        <a href="{% url 'merch' %}" class="btn btn-outline-black rounded-0 mt-5 w-25">
+                                        <a href="{% url 'merch' %}" class="btn btn-extra rounded-0 mt-5 w-25 ">
                                             <span class="icon">
                                                 <i class="fas fa-chevron-left"></i>
                                             </span>
                                             <span class="text-uppercase">Keep Shopping</span>
                                         </a>
-                                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5 w-25" value="Add to Bag">
+                                        <input type="submit" class="btn w-25  rounded-0 text-uppercase mt-5 btn-extra" value="Add to Bag">
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     {% endwith %}
@@ -90,9 +90,6 @@
                             </form>
                 {# end of code institute code #}
             </div>
-
-
-
         </div>
     </section>
 {% endblock %}

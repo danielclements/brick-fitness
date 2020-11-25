@@ -1,3 +1,7 @@
 .increment-btn {
     height: 38px !important;
 }
+
+.btn-extra{
+    font-size: 1rem !important;
+}
