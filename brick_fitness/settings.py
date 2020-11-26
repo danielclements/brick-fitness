@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
 
+    # Other
+    'crispy_forms',
+
 
     # Allauth
     'allauth',
@@ -49,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'brick_fitness.urls'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -69,6 +73,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.context.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
