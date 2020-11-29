@@ -73,7 +73,7 @@ def set_paid_until(charge):
             )
             return False
 
-        user.set_paid_until(current_period_end)
+        SubscriptionStatus.set_paid_until(current_period_end)
         logger.info(
             f"Profile with {current_period_end} saved for user {email}"
         )

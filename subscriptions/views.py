@@ -1,9 +1,13 @@
 import stripe
+import logging
+import json
 from django.shortcuts import render
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from subscriptions.payments.stripe import (SubPlan, set_paid_until)
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse, HttpResponseRedirect
 
 API_KEY = settings.STRIPE_SECRET_KEY
 
@@ -23,8 +27,37 @@ def subscription_selection(request):
 
 # Stripe payments with django on youtube by DjangoLessons,
 # Please visit readme to find a link to this channel
+@require_POST
+@csrf_exempt
+def stripe_webhooks(request):
 
-require_POST
+    payload = request.body
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+    event = None
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, settings.STRIPE_WEBHOOK_SIGNING_KEY
+        )
+        logger.info("Event constructed correctly")
+    except ValueError:
+        # Invalid payload
+        logger.warning("Invalid Payload")
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError:
+        # Invalid signature
+        logger.warning("Invalid signature")
+        return HttpResponse(status=400)
+
+    # Handle the event
+    if event.type == 'charge.succeeded':
+        # object has  payment_intent attr
+        set_paid_until(event.data.object)
+
+    return HttpResponse(status=200)
+
+
+@require_POST
 @login_required
 def payment_method(request):
     stripe.api_key = API_KEY
@@ -47,7 +80,7 @@ def payment_method(request):
     if payment_method == 'card':
 
         context['secret_key'] = payment_intent.client_secret
-        context['STRIPE_PUBLISHABLE_KEY'] = settings.STRIPE_PUBLIC_KEY
+        context['STRIPE_PUBLISHABLE_KEY'] = settings.STRIPE_PUBLISHABLE_KEY
         context['customer_email'] = request.user.email
         context['payment_intent_id'] = payment_intent.id
         context['automatic'] = automatic
@@ -97,12 +130,12 @@ def card(request):
             context['payment_intent_secret'] = pi.client_secret
             context['STRIPE_PUBLISHABLE_KEY'] = settings.STRIPE_PUBLISHABLE_KEY
 
-            return render(request, 'land/payments/3dsec.html', context)
+            return render(request, 'subscriptions/3dsec.html', context)
     else:
         stripe.PaymentIntent.modify(
             payment_intent_id,
             payment_method=payment_method_id
         )
 
-    # return render(request, 'land/payments/thank_you.html')
+    return render(request, 'user_profiles/profile.html')
 
