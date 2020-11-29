@@ -9,7 +9,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('merch/', include('merch.urls')),
-    path('user_profiles/', include('subscriptions.urls')),
+    path('subscriptions/', include('subscriptions.urls')),
     path('plans/', include('plans.urls')),
     path('profile/', include('user_profiles.urls')),
     path('bag/', include('bag.urls')),

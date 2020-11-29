@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'subscriptions/css/subscriptions.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'subscriptions/javascript/card.js' %}"></script>
+    <script>
+      card('{{STRIPE_PUBLIC_KEY}}', '{{customer_email}}');
+    </script>
+{% endblock extra_js %}
+
+{% block content %}
+{#    //code from Stripe payments with django, visit the reference section in the README to find out more#}
+    <div class="row py-3">
+        <div class="col-lg-12 col-md-12">
+           <div class="container">
+            <form action="{% url 'card' %}" method="post" id="payment-form">
+              {% csrf_token %}
+              <div id="card-element">
+                <!-- Elements will create input elements here -->
+              </div>
+              <!-- We'll put the error messages in this element -->
+              <div id="card-errors" role="alert"></div>
+              <input type="hidden" name="payment_intent_id" value="{{ payment_intent_id }}" >
+              <input type="hidden" name="stripe_plan_id" value="{{ stripe_plan_id }}" >
+              <input type="hidden" name="automatic" value="{{ automatic }}" >
+
+              <button id="submit-button">Pay</button>
+            </form>
+           </div>
+        </div>
+    </div>
+{% endblock %}
