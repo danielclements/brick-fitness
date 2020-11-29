@@ -1,15 +1,16 @@
 import stripe
 import logging
-import json
 from django.shortcuts import render
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from subscriptions.payments.stripe import (SubPlan, set_paid_until)
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 
 API_KEY = settings.STRIPE_SECRET_KEY
+logger = logging.getLogger(__name__)
+
 
 # Create your views here.
 
@@ -27,13 +28,13 @@ def subscription_selection(request):
 
 # Stripe payments with django on youtube by DjangoLessons,
 # Please visit readme to find a link to this channel
+
 @require_POST
 @csrf_exempt
 def stripe_webhooks(request):
 
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
-    event = None
 
     try:
         event = stripe.Webhook.construct_event(
@@ -138,4 +139,3 @@ def card(request):
         )
 
     return render(request, 'user_profiles/profile.html')
-

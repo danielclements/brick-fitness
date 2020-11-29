@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import SubscriptionStatus
+from .models import StripeCustomer
 
-admin.site.register(SubscriptionStatus)
+admin.site.register(StripeCustomer)

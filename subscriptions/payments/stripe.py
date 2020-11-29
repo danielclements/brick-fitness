@@ -1,6 +1,6 @@
 import logging
 import stripe
-from subscriptions.models import SubscriptionStatus
+from subscriptions.models import StripeCustomer
 
 from django.conf import settings
 
@@ -66,14 +66,14 @@ def set_paid_until(charge):
             current_period_end = subscr['current_period_end']
 
         try:
-            user = SubscriptionStatus.user.objects.get(email=email)
-        except SubscriptionStatus.user.DoesNotExist:
+            user = StripeCustomer.user.objects.get(email=email)
+        except StripeCustomer.user.DoesNotExist:
             logger.warning(
                 f"User with email {email} not found"
             )
             return False
 
-        SubscriptionStatus.set_paid_until(current_period_end)
+        StripeCustomer.set_paid_until(current_period_end)
         logger.info(
             f"Profile with {current_period_end} saved for user {email}"
         )

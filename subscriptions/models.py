@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 
 
-class SubscriptionStatus(models.Model):
+class StripeCustomer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     paid_until = models.DateField(null=True, blank=True)
 
@@ -23,13 +23,10 @@ class SubscriptionStatus(models.Model):
         self.save()
 
     def has_paid(
-        self,
-        current_date=datetime.date.today()
+            self,
+            current_date=datetime.date.today()
     ):
         if self.paid_until is None:
             return False
 
         return current_date < self.paid_until
-
-    def __str__(self):
-        return self.user.username
