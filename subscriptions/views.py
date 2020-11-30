@@ -33,8 +33,8 @@ def checkout(request):
             'quantity': 1,
         }],
         mode='payment',
-        success_url=request.build_absolute_uri(reverse('thanks')) + '?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url=request.build_absolute_uri(reverse('index')),
+        success_url=request.build_absolute_uri(reverse('subscriptions')) + '?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url=request.build_absolute_uri(reverse('subscriptions')),
     )
     return JsonResponse({
         'session_id': session.id,
