@@ -30,7 +30,7 @@ class Meal(models.Model):
 
 class MealPlan(models.Model):
     name = models.CharField(max_length=254)
-    plan_thumb_nail = models.ImageField(default='default-profile-img.png', upload_to='mealPlanThumbNails')
+    plan_thumb_nail = models.ImageField(default='Meal Plan Premium.jpg', upload_to='mealPlanThumbNails')
     length = models.CharField(max_length=100, default='7 Days')
     description = models.CharField(max_length=300, default="description pending")
     is_premium = models.BooleanField(default=True)
