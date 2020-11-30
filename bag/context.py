@@ -4,6 +4,7 @@ from merch.models import Product
 from user_profiles.models import Profile
 
 
+# Code from the django lessons on Code Institute see readme for more info
 def bag_contents(request):
 
     bag_items = []

@@ -71,10 +71,16 @@
 {#                            CODE INSTITUTE CODE #}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6>Bag Total:${{ total|floatformat:2 }}</h6>
-                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    <h6>Bag Total:£{{ total|floatformat:2 }}</h6>
+                                    <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                     <a href="{% url 'checkout' %}" class="btn  rounded-0 ">
+                                        <a href="{% url 'checkout' %}" class="btn btn-grn rounded-0 ">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
                                 </td>
                             </tr>
 {#                      end of CODE INSTITUE CODE #}
