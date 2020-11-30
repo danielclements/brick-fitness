@@ -16,18 +16,18 @@
                             <div class="d-none d-lg-inline col-3">
                                 <img class="thumb-nails m-1" src="{{ plans.plan_thumb_nail.url }}" alt="">
                             </div>
-                            <div class="p-0 col-md-6 col-lg-7">
+                            <div class="p-0 col-md-8 col-lg-7">
                                 <h4 class="pl-4 pt-4 pb-0 text-light">{{ plans.name }}</h4>
                                 <h5 class="text-white-50 pl-4 pt-1">{{ plans.length }}</h5>
                                 <p class="text-light pl-4 w-75">{{ plans.description }}</p>
-                                <a href="{% url 'individual_plans' plans.id %}" class=" btn btn-grn w-25 ml-4">View Plan</a>
+                                <a href="{% url 'individual_plans' plans.id %}" class="btn btn-grn w-25 ml-4">View Plan</a>
                             </div>
-                            <div class="col-6 col-lg-2 p-0">
+                            <div class=" col-12 col-md-4 col-lg-2 p-0">
                                 {% if plans.vegetarian_friendly == True %}
-                                    <p class="pt-4 pr-5 text-success w-100 text-right ">Vegan Friendly</p>
+                                    <p class="pt-4 text-success w-100 text-center ">Vegan Friendly</p>
                                 {% endif %}
                                 {% if plans.is_premium == True %}
-                                    <p class="pt-4 pr-5 text-success w-100 text-right ">Premium</p>
+                                    <p class="pt-2 text-success w-100 text-center ">Premium</p>
                                 {% endif %}
 
 

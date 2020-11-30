@@ -9,7 +9,7 @@
 {% block content %}
     <section class="profiles-main-wrapper">
         <div class="row profiles-row-1 m-0 mb-3">
-            <div class="col-md-6 offset-md-1 border pt-3">
+            <div class=" col-10 col-md-6 offset-1 border pt-3 mb-3">
                 <div class="img-wrapper">
                     <img src="{{ profile.profile_img.url }}" alt="" class="profile-pic ">
                 </div>
@@ -23,15 +23,27 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-md-3 offset-md-1 border ">
+            <div class=" col-10 col-md-3 offset-1 border mb-3">
                 <h3 class="text-center w-100 text-white-50">Orders</h3>
             </div>
         </div>
         <div class="row profiles-row-2 m-0">
-             <div class="col-md-6 offset-md-1 border pt-3">
+             <div class="col-10 col-md-6 offset-1 border pt-3 mb-3">
                 <h3 class="text-center w-100 text-white-50">Active Plans</h3>
+                 <div class="row m-0">
+                     <div class="col-6">
+                         <h5 class="text-center text-light">{{ profile.active_meal_plan.name }}</h5>
+                         <div class="d-flex justify-content-center">
+                             <img class="w-75" src="{{ profile.active_meal_plan.plan_thumb_nail.url }}" alt="MealPlanThumb">
+                         </div>
+
+                     </div>
+                     <div class="col-6">
+                         <h5 class="text-center text-light">Work Out Plan </h5>
+                     </div>
+                 </div>
              </div>
-            <div class="col-md-3 offset-md-1 border ">
+            <div class=" col-10 col-md-3 offset-1 border mb-3">
                 <h3 class="text-center w-100 text-white-50">My Details</h3>
             </div>
         </div>
