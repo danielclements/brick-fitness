@@ -18,3 +18,7 @@ h1{
 .plans-wrapper{
     background-color: #383838;
 }
+
+.individual-plan-wrapper{
+    min-height: 100vh; padding-top: 100px;
+}

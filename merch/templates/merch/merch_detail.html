@@ -53,7 +53,7 @@
                                         <div class="form-group w-25">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn  rounded-0 m-0 increment-btn"
+                                                    <button class="decrement-qty btn btn-grn  rounded-0 m-0 increment-btn"
                                                         data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                                                         <span class="icon">
                                                             <i class="fas fa-minus"></i>
@@ -65,7 +65,7 @@
                                                     data-item_id="{{ product.id }}"
                                                     id="id_qty_{{ product.id }}">
                                                 <div class="input-group-append">
-                                                    <button class="increment-qty btn  rounded-0 m-0 increment-btn"
+                                                    <button class="increment-qty btn btn-grn  rounded-0 m-0 increment-btn"
                                                         data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
                                                         <span class="icon">
                                                             <i class="fas fa-plus"></i>
@@ -76,13 +76,13 @@
                                         </div>
 
                                     <div class="">
-                                        <a href="{% url 'merch' %}" class="btn btn-extra rounded-0 mt-5 w-25 ">
+                                        <a href="{% url 'merch' %}" class="btn btn-grn btn-extra rounded-0 mt-5 w-25 ">
                                             <span class="icon">
                                                 <i class="fas fa-chevron-left"></i>
                                             </span>
                                             <span class="text-uppercase">Keep Shopping</span>
                                         </a>
-                                        <input type="submit" class="btn w-25  rounded-0 text-uppercase mt-5 btn-extra" value="Add to Bag">
+                                        <input type="submit" class=" btn btn-grn w-25  rounded-0 text-uppercase mt-5 btn-extra" value="Add to Bag">
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     {% endwith %}

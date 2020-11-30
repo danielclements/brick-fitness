@@ -7,7 +7,473 @@
 
 
 {% block content %}
-    <section class="">
-        <h1 class="text-light"> {{ plan.name }}</h1>
+    <section class="individual-plan-wrapper">
+        <h2 class="text-light text-center p-3"> {{ plan.name }}</h2>
+        <div class="row m-0">
+            <div class="col-10 offset-1">
+                <div class="accordion" id="accordionExample">
+{#                Monday#}
+                      <div class="card">
+                        <div class="card-header" id="Monday">
+                          <h2 class="mb-0 text-center">
+                            <button class="btn btn-link text-center" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                              Monday
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                             data-parent="#accordionExample">
+                          <div class="card-body text-center">
+                              <p>
+                                  <a class="btn btn-primary m-1" data-toggle="collapse" href="#collapse1" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    BreakFast
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse2" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Lunch
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse3" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Dinner
+                                  </a>
+                              </p>
+                              <div class="collapse" id="collapse1">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'BreakFast' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse2">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Lunch' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse3">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Dinner' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+{#                Tuesday#}
+                      <div class="card">
+                        <div class="card-header" id="Tuesday">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Tuesday
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                           <div class="card-body text-center">
+                              <p>
+                                  <a class="btn btn-primary m-1" data-toggle="collapse" href="#collapse1" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    BreakFast
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse2" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Lunch
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse3" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Dinner
+                                  </a>
+                              </p>
+                              <div class="collapse" id="collapse1">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Tuesday.all %}
+                                        {% if meal.meal_type.meal_type == 'BreakFast' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse2">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Lunch' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse3">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Dinner' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+{#                Wednesday#}
+                      <div class="card">
+                        <div class="card-header" id="Wednesday">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Wednesday
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                           <div class="card-body text-center">
+                              <p>
+                                  <a class="btn btn-primary m-1" data-toggle="collapse" href="#collapse1" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    BreakFast
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse2" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Lunch
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse3" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Dinner
+                                  </a>
+                              </p>
+                              <div class="collapse" id="collapse1">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Wednesday.all %}
+                                        {% if meal.meal_type.meal_type == 'BreakFast' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse2">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Lunch' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse3">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Dinner' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+{#                Thursday#}
+                    <div class="card">
+                        <div class="card-header" id="Thursday">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              Tuesday
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="collapseFour" data-parent="#accordionExample">
+                           <div class="card-body text-center">
+                              <p>
+                                  <a class="btn btn-primary m-1" data-toggle="collapse" href="#collapse1" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    BreakFast
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse2" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Lunch
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse3" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Dinner
+                                  </a>
+                              </p>
+                              <div class="collapse" id="collapse1">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Thursday.all %}
+                                        {% if meal.meal_type.meal_type == 'BreakFast' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse2">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Lunch' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse3">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Dinner' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+{#                Friday#}
+                    <div class="card">
+                        <div class="card-header" id="Friday">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                              Friday
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="collapseFive" data-parent="#accordionExample">
+                           <div class="card-body text-center">
+                              <p>
+                                  <a class="btn btn-primary m-1" data-toggle="collapse" href="#collapse1" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    BreakFast
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse2" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Lunch
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse3" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Dinner
+                                  </a>
+                              </p>
+                              <div class="collapse" id="collapse1">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Tuesday.all %}
+                                        {% if meal.meal_type.meal_type == 'BreakFast' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse2">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Lunch' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse3">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Friday.all %}
+                                        {% if meal.meal_type.meal_type == 'Dinner' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+{#                Saturday#}
+                    <div class="card">
+                        <div class="card-header" id="Saturday">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                              Saturday
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="collapseSix" data-parent="#accordionExample">
+                           <div class="card-body text-center">
+                              <p>
+                                  <a class="btn btn-primary m-1" data-toggle="collapse" href="#collapse1" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    BreakFast
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse2" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Lunch
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse3" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Dinner
+                                  </a>
+                              </p>
+                              <div class="collapse" id="collapse1">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Saturday.all %}
+                                        {% if meal.meal_type.meal_type == 'BreakFast' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse2">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Lunch' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse3">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Dinner' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+{#                Sunday#}
+                <div class="card">
+                        <div class="card-header" id="Sunday">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                              Saturday
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseSeven" class="collapse" aria-labelledby="collapseSeven" data-parent="#accordionExample">
+                           <div class="card-body text-center">
+                              <p>
+                                  <a class="btn btn-primary m-1" data-toggle="collapse" href="#collapse1" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    BreakFast
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse2" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Lunch
+                                  </a>
+                                  <a class="btn  btn-primary m-1" data-toggle="collapse" href="#collapse3" role="button"
+                                     aria-expanded="false" aria-controls="collapseExample">
+                                    Dinner
+                                  </a>
+                              </p>
+                              <div class="collapse" id="collapse1">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Sunday.all %}
+                                        {% if meal.meal_type.meal_type == 'BreakFast' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse2">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Lunch' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="collapse" id="collapse3">
+                                  <div class="card card-body">
+                                      {% for meal in plan.Monday.all %}
+                                        {% if meal.meal_type.meal_type == 'Dinner' %}
+                                            <h6 class="text-center"> Meal</h6>
+                                             <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
+                                            <h6 class="text-center"> Ingredients</h6>
+                                             {% for i in meal.ingredients %}<p> {{ i }} </p>{% endfor %}
+                                        {% endif %}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+            </div>
+        </div>
     </section>
 {% endblock %}
