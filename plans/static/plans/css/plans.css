@@ -54,3 +54,7 @@ h1{
     text-decoration: underline;
     font-size: 1.25rem;
 }
+
+.plan-button{
+    max-width: 33% !important;
+}
