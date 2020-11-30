@@ -36,6 +36,17 @@ def individual_plan(request, plans_id):
     return render(request, 'plans/invidual-plan.html', context)
 
 
+def individual_workout(request, plan_id):
+    """ This view returns the individual merch detail page """
+
+    plan = get_object_or_404(WorkOutPlan, pk=plan_id)
+
+    context = {
+        'plan': plan,
+    }
+    return render(request, 'plans/individual-workout.html', context)
+
+
 def activate_plan(request, plans_id):
     """ This view returns the individual merch detail page """
     plan = get_object_or_404(MealPlan, pk=plans_id)

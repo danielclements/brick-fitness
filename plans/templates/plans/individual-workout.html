@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'plans/css/plans.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <section class="individual-plan-wrapper">
+        <h2 class="text-light text-center p-3"> {{ plan.name }}</h2>
+        <div class="row m-0">
+            <div class="col-10 offset-1 col-md-8 offset-md-2">
+                <div class="accordion accordian-custom " id="accordionExample">
+{#                Monday#}
+                      <div class="card accordian-custom border-grn">
+                        <div class="card-header" id="Monday">
+                          <h2 class="mb-0 text-center text-light text-dcr-none">
+                            <button class="btn  text-light   collaspe-btn" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                              Monday
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                             data-parent="#accordionExample">
+                            <h6 class="text-center text-light"> Workout</h6>
+                            {% for workout in plan.Monday2.all %}
+                                <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
+                            {% endfor %}
+                        </div>
+                      </div>
+{#                Tuesday#}
+                    <div class="card accordian-custom border-grn">
+                        <div class="card-header" id="Tuesday">
+                          <h2 class="mb-0 text-center text-light text-dcr-none">
+                            <button class="btn  text-light   collaspe-btn" type="button" data-toggle="collapse" data-target="#collapse2"
+                                    aria-expanded="true" aria-controls="collapse2">
+                              Tuesday
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapse2" class="collapse " aria-labelledby="heading2"
+                             data-parent="#accordionExample">
+                            <h6 class="text-center text-light"> Workout</h6>
+                            {% for workout in plan.Tuesday2.all %}
+                                <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
+                            {% endfor %}
+                        </div>
+                      </div>
+{#                Wednesday#}
+                      <div class="card accordian-custom border-grn">
+                        <div class="card-header" id="Wednesday">
+                          <h2 class="mb-0 text-center text-light text-dcr-none">
+                            <button class="btn  text-light  collaspe-btn" type="button" data-toggle="collapse" data-target="#collapse3"
+                                    aria-expanded="false" aria-controls="collapse3">
+                              Wednesday
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapse3" class="collapse " aria-labelledby="heading3"
+                             data-parent="#accordionExample">
+                            <h6 class="text-center text-light"> Workout</h6>
+                            {% for workout in plan.wednesday2.all %}
+                                <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
+                            {% endfor %}
+                        </div>
+                      </div>
+{#                Thursday#}
+                   <div class="card accordian-custom border-grn">
+                        <div class="card-header" id="Thursday">
+                          <h2 class="mb-0 text-center text-light text-dcr-none">
+                            <button class="btn  text-light  collaspe-btn" type="button" data-toggle="collapse" data-target="#collapse4"
+                                    aria-expanded="false" aria-controls="collapse4">
+                              Thursday
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapse4" class="collapse " aria-labelledby="heading4"
+                             data-parent="#accordionExample">
+                            <h6 class="text-center text-light"> Workout</h6>
+                            {% for workout in plan.Thursday2.all %}
+                                <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
+                            {% endfor %}
+                        </div>
+                      </div>
+{#                Friday#}
+                    <div class="card accordian-custom border-grn">
+                        <div class="card-header" id="Thursday">
+                          <h2 class="mb-0 text-center text-light text-dcr-none">
+                            <button class="btn  text-light  collaspe-btn" type="button" data-toggle="collapse" data-target="#collapse5"
+                                    aria-expanded="false" aria-controls="collapse5">
+                              Thursday
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapse5" class="collapse " aria-labelledby="heading5"
+                             data-parent="#accordionExample">
+                            <h6 class="text-center text-light"> Workout</h6>
+                            {% for workout in plan.Friday2.all %}
+                                <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
+                            {% endfor %}
+                        </div>
+                      </div>
+{#                Saturday#}
+                    <div class="card accordian-custom border-grn">
+                        <div class="card-header" id="Saturday">
+                          <h2 class="mb-0 text-center text-light text-dcr-none">
+                            <button class="btn  text-light  collaspe-btn" type="button" data-toggle="collapse" data-target="#collapse6"
+                                    aria-expanded="false" aria-controls="collapse6">
+                              Saturday
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapse6" class="collapse " aria-labelledby="heading6"
+                             data-parent="#accordionExample">
+                            <h6 class="text-center text-light"> Workout</h6>
+                            {% for workout in plan.Friday2.all %}
+                                <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
+                            {% endfor %}
+                        </div>
+                      </div>
+{#                Sunday#}
+                    <div class="card accordian-custom border-grn">
+                        <div class="card-header" id="Saturday">
+                          <h2 class="mb-0 text-center text-light text-dcr-none">
+                            <button class="btn  text-light  collaspe-btn" type="button" data-toggle="collapse" data-target="#collapse7"
+                                    aria-expanded="false" aria-controls="collapse7">
+                              Saturday
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapse7" class="collapse " aria-labelledby="heading7"
+                             data-parent="#accordionExample">
+                            <h6 class="text-center text-light"> Workout</h6>
+                            {% for workout in plan.Friday2.all %}
+                                <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
+                            {% endfor %}
+                        </div>
+                      </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

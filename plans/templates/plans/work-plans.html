@@ -20,7 +20,7 @@
                                 <h4 class="pl-4 pt-4 pb-0 text-light">{{ plan.name }}</h4>
                                 <h5 class="text-white-50 pl-4 pt-1">{{ plan.length }}</h5>
                                 <p class="text-light pl-4 w-75">{{ plan.description }}</p>
-                                <a href="{% url 'individual_plans' plan.id %}" class="btn btn-grn plan-button ml-4">View Plan</a>
+                                <a href="{% url 'individual_workout' plan.id %}" class="btn btn-grn plan-button ml-4">View Plan</a>
                                 <form method="post" action="{% url 'activate_workout_plan' plan.id%}">
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-grn plan-button ml-4">Activate Plan</button>
