@@ -29,22 +29,26 @@
                 <h3 class="text-center w-100 text-white-50">Active Plans</h3>
                  <div class="row m-0">
                      <div class="col-6">
-                         <h5 class="text-center text-light">{{ profile.active_meal_plan.name }}</h5>
-                         <div class="d-flex justify-content-center">
-                             <img class="w-75" src="{{ profile.active_meal_plan.plan_thumb_nail.url }}" alt="MealPlanThumb">
-                         </div>
-                         <div class="d-flex justify-content-center">
-                            <a href="{% url 'individual_plans' profile.active_meal_plan.id %}" class="btn btn-grn plan-button w-75">View Plan</a>
-                         </div>
+                         {%  if profile.active_meal_plan %}
+                             <h5 class="text-center text-light">{{ profile.active_meal_plan.name }}</h5>
+                             <div class="d-flex justify-content-center">
+                                 <img class="w-75" src="{{ profile.active_meal_plan.plan_thumb_nail.url }}" alt="MealPlanThumb">
+                             </div>
+                             <div class="d-flex justify-content-center">
+                                <a href="{% url 'individual_plans' profile.active_meal_plan.id %}" class="btn btn-grn plan-button w-75">View Plan</a>
+                             </div>
+                         {% endif %}
                      </div>
                      <div class="col-6">
-                         <h5 class="text-center text-light">{{ profile.active_workout_plan.name }}</h5>
-                         <div class="d-flex justify-content-center">
-                             <img class="w-75" src="{{ profile.active_workout_plan.plan_thumb_nail.url}}" alt="MealPlanThumb">
-                         </div>
-                         <div class="d-flex justify-content-center">
-                            <a href="{% url 'individual_workout' profile.active_workout_plan.id %}" class="btn btn-grn plan-button w-75">View Plan</a>
-                         </div>
+                         {% if profile.active_workout_plan %}
+                             <h5 class="text-center text-light">{{ profile.active_workout_plan.name }}</h5>
+                             <div class="d-flex justify-content-center">
+                                 <img class="w-75" src="{{ profile.active_workout_plan.plan_thumb_nail.url}}" alt="MealPlanThumb">
+                             </div>
+                             <div class="d-flex justify-content-center">
+                                <a href="{% url 'individual_workout' profile.active_workout_plan.id %}" class="btn btn-grn plan-button w-75">View Plan</a>
+                             </div>
+                         {% endif %}
                      </div>
                      </div>
                  </div>
