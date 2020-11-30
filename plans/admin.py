@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MealType, Meal, MealPlan
+from .models import MealType, Meal, MealPlan, PlanLevel
 
 
 # Register your models here.
@@ -31,7 +31,15 @@ class MealPlanAdmin(admin.ModelAdmin):
     )
 
 
+class PlanLevelAdmin(admin.ModelAdmin):
+    list_display = (
+        'Difficulty',
+    )
+
+
 admin.site.register(MealType, MealTypeAdmin)
 admin.site.register(Meal, MealAdmin)
 admin.site.register(MealPlan, MealPlanAdmin)
+admin.site.register(PlanLevel, PlanLevelAdmin)
+
 

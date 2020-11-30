@@ -9,6 +9,13 @@ class MealType(models.Model):
         return self.meal_type
 
 
+class PlanLevel(models.Model):
+    Difficulty = models.CharField(max_length=40)
+
+    def __str__(self):
+        return self.Difficulty
+
+
 class Meal(models.Model):
     meal_type = models.ForeignKey(
         'MealType', null=True, blank=True, on_delete=models.SET_NULL)
@@ -23,8 +30,12 @@ class Meal(models.Model):
 
 class MealPlan(models.Model):
     name = models.CharField(max_length=254)
+    plan_thumb_nail = models.ImageField(default='default-profile-img.png', upload_to='mealPlanThumbNails')
     length = models.CharField(max_length=100, default='7 Days')
     description = models.CharField(max_length=300, default="description pending")
+    is_premium = models.BooleanField(default=True)
+    difficulty_level = models.ForeignKey('PlanLevel', null=True, blank=True, on_delete=models.SET_NULL)
+    vegetarian_friendly = models.BooleanField(default=False)
     Monday = models.ManyToManyField("Meal", related_name='+')
     Tuesday = models.ManyToManyField("Meal", related_name='+')
     wednesday = models.ManyToManyField("Meal", related_name='+')
