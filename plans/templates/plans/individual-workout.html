@@ -121,7 +121,7 @@
                         <div id="collapse6" class="collapse " aria-labelledby="heading6"
                              data-parent="#accordionExample">
                             <h6 class="text-center text-light"> Workout</h6>
-                            {% for workout in plan.Friday2.all %}
+                            {% for workout in plan.Saturday2.all %}
                                 <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
                             {% endfor %}
                         </div>
@@ -140,7 +140,7 @@
                         <div id="collapse7" class="collapse " aria-labelledby="heading7"
                              data-parent="#accordionExample">
                             <h6 class="text-center text-light"> Workout</h6>
-                            {% for workout in plan.Friday2.all %}
+                            {% for workout in plan.Sunday2.all %}
                                 <p class="text-light text-center">{{ workout.name }} | {{ workout.unit }}</p>
                             {% endfor %}
                         </div>
