@@ -16,7 +16,7 @@
 
 	<div class="container-login">
 		<div class="img">
-			<img src="/media/undraw_personalization_triu.svg">
+			<img src="/media/undraw_personalization_triu.svg" alt="login-img-profile">
 		</div>
 		<div class="login-content">
 			<form class="login" method="POST" action="{% url 'account_login' %}">
@@ -24,7 +24,7 @@
                     {% if redirect_field_value %}
                         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-				<img src="/media/undraw_profile_pic_ic5t.svg">
+				<img src="/media/undraw_profile_pic_ic5t.svg" alt="man-sitting-waiting">
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
