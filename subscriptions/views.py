@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 # Create your views here.
 
 @csrf_exempt
-def subscription_plans(request):
+def upgrade(request):
     """ This view returns the subscription home page """
     return render(request, 'subscriptions/subscription-plans.html')
 

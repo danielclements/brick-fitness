@@ -8,29 +8,7 @@
 {% block content %}
     <section class="subsription-plans-main-wrapper">
         <div class="row plans-wrapper">
-            <div class=" offset-lg-3 col-lg-3">
-                <div class="cards-wrapper">
-                    <div class="card basic-card sub-cards" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-white">Free</h5>
-                            <h3 class="card-subtitle mb-2  text-center text-white">£0</h3>
-                            <p class="card-text text-white">Includes basic meal/workout plans.</p>
-                        </div>
-                    </div>
-                    <div class="sub-includes-wrapper" style="width: 18rem;">
-                        <ul class="list-group-item home-text" >
-                            <li class=""><i class="fas fa-check text-success"></i>&nbsp;&nbsp;&nbsp;Basic Meal Plans</li>
-                            <li class=""><i class="fas fa-check text-success"></i>&nbsp;&nbsp;&nbsp;Basic Workout Plans</li>
-                            <li class=""><i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Premium Meal Plans</li>
-                            <li class=""><i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Premium Workout Plans</li>
-                            <li class=""><i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10% Store Discount</li>
-                            <li class=""><i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free Delivery</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3">
+            <div class="w-100 d-flex justify-content-center">
                 <div class="cards-wrapper">
                     <div class="card pro-card sub-cards">
                         <div class="card-body">
@@ -48,7 +26,9 @@
                             <li class=""><i class="fas fa-check text-success"></i>&nbsp;&nbsp;&nbsp;10% Store Discount</li>
                             <li class=""><i class="fas fa-check text-success"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free Delivery</li>
                         </ul>
-                        <a href="{% url 'make_payment' %}" id="checkout-button" class="btn btn-primary">Buy Now</a>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'make_payment' %}" id="checkout-button" class="btn btn-grn w-75">Buy Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
