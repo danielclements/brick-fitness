@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-from plans.models import MealPlan
+from plans.models import MealPlan, WorkOutPlan
 
 
 class Profile(models.Model):
@@ -11,6 +11,7 @@ class Profile(models.Model):
     profile_img = models.ImageField(default='default-profile-img.png', upload_to='profile_pics')
     subscription_premium = models.BooleanField(default=False)
     active_meal_plan = models.ForeignKey(MealPlan, on_delete=models.CASCADE, null=True, blank=True)
+    active_workout_plan = models.ForeignKey(WorkOutPlan, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.user.username

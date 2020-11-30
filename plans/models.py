@@ -28,6 +28,33 @@ class Meal(models.Model):
         return self.name
 
 
+class Workout(models.Model):
+    name = models.CharField(max_length=50)
+    unit = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class WorkOutPlan(models.Model):
+    name = models.CharField(max_length=254)
+    plan_thumb_nail = models.ImageField(default='Workout-plan-Free.jpg', upload_to='WorkOutThumbNails')
+    length = models.CharField(max_length=100, default='7 Days')
+    description = models.CharField(max_length=300, default="description pending")
+    difficulty_level = models.ForeignKey('PlanLevel', null=True, blank=True, on_delete=models.SET_NULL)
+    is_premium = models.BooleanField(default=True)
+    Monday2 = models.ManyToManyField("Workout", related_name='+')
+    Tuesday2 = models.ManyToManyField("Workout", related_name='+')
+    wednesday2 = models.ManyToManyField("Workout", related_name='+')
+    Thursday2 = models.ManyToManyField("Workout", related_name='+')
+    Friday2 = models.ManyToManyField("Workout", related_name='+')
+    Saturday2 = models.ManyToManyField("Workout", related_name='+')
+    Sunday2 = models.ManyToManyField("Workout", related_name='+')
+
+    def __str__(self):
+        return self.name
+
+
 class MealPlan(models.Model):
     name = models.CharField(max_length=254)
     plan_thumb_nail = models.ImageField(default='Meal Plan Premium.jpg', upload_to='mealPlanThumbNails')
