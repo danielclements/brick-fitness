@@ -1,1 +1,1 @@
-1	web: gunicorn brick_fitness.wsgi:application
+web: gunicorn boutique_ado.wsgi:application
