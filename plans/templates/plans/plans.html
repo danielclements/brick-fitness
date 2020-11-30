@@ -13,28 +13,25 @@
                     <div class=" offset-1 col-10">
                         {% for plans in mealplans %}
                         <div class="row border mb-4 plans-wrapper">
-                            <div class="d-none d-md-inline col-3 ">
+                            <div class="d-none d-lg-inline col-3">
                                 <img class="thumb-nails m-1" src="{{ plans.plan_thumb_nail.url }}" alt="">
                             </div>
-                            <div class="p-0 col-md-5 col-lg-7">
+                            <div class="p-0 col-md-6 col-lg-7">
                                 <h4 class="pl-4 pt-4 pb-0 text-light">{{ plans.name }}</h4>
                                 <h5 class="text-white-50 pl-4 pt-1">{{ plans.length }}</h5>
                                 <p class="text-light pl-4 w-75">{{ plans.description }}</p>
-                                <a href="#" class="btn w-50">Activate Plan</a>
+                                <a href="#" class="btn w-25 ml-4">Activate Plan</a>
                             </div>
-                            <div class="col-2 p-0">
+                            <div class="col-6 col-lg-2 p-0">
                                 {% if plans.vegetarian_friendly == True %}
-                                    <p class="pt-4 text-success ">Vegan Friendly</p>
+                                    <p class="pt-4 pr-5 text-success w-100 text-right ">Vegan Friendly</p>
                                 {% endif %}
-                                {% if plans.difficulty_level.Difficulty == Beginner %}
-                                    <p class=" pt-4 text-success">{{ plans.difficulty_level.Difficulty }}</p>
+                                {% if plans.is_premium == True %}
+                                    <p class="pt-4 pr-5 text-success w-100 text-right ">Premium</p>
                                 {% endif %}
-                                {% if plans.difficulty_level.Difficulty == Intermediate %}
-                                    <p class=" pt-4 text-primary">{{ plans.difficulty_level.Difficulty }}</p>
-                                {% endif %}
-                                {% if plans.difficulty_level.Difficulty == Advanced %}
-                                    <p class=" pt-4 text-danger">TEST</p>
-                                {% endif %}
+
+
+
 
 
                             </div>
