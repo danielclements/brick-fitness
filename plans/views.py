@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import MealPlan, WorkOutPlan
 from user_profiles.models import Profile
 from user_profiles.views import user_profiles
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -47,6 +48,7 @@ def individual_workout(request, plan_id):
     return render(request, 'plans/individual-workout.html', context)
 
 
+@login_required()
 def activate_plan(request, plans_id):
     """ This view returns the individual merch detail page """
     plan = get_object_or_404(MealPlan, pk=plans_id)
@@ -57,6 +59,7 @@ def activate_plan(request, plans_id):
         return redirect(user_profiles)
 
 
+@login_required()
 def activate_workout_plan(request, plan_id):
     """ This view returns the individual merch detail page """
     plan = get_object_or_404(WorkOutPlan, pk=plan_id)

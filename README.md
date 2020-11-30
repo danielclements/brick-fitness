@@ -5,6 +5,8 @@ I got the idea for this project as i was trying to become a lot healthier as I h
  I wanted to build this project as a place for people to start a new journey of fitness and health, as I struggled to find the resources
  to get started as you tend to find a lot of conflicting information online.
 
+## Disclaimer Please Do not use any real cards with stripe, PLease use the USA test card
+### Card number 4242 4242 4242 4242 and random expiry and cvc code will be accepted
  
 ## UX
  
