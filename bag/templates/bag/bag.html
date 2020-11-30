@@ -89,7 +89,7 @@
                 </div>
             {% else %}
                 <div class="col-10 offset-1 d-flex justify-content-center align-items-center flex-column">
-                    <img class="empty-cart-svg " src="/media/undraw_Taken_re_yn20.svg">
+                    <img class="empty-cart-svg " src="{{ MEDIA_URL }}undraw_Taken_re_yn20.svg">
                     <h5 class=" text-light pt-3">Your Cart Is Empty!</h5>
                     <p class="pl-3 pr-3 pt-0 text-light">Looks Like The Aliens Stole Your Items</p>
                     <a href="{% url 'merch' %}?category=workout_gear,accessories,hoodie-jumper,shoes,active_wear" class="store-button store-a-link d-flex align-items-center justify-content-center">Visit Store</a>
