@@ -40,6 +40,11 @@ I wanted people to visit the site and discover new meals/workout inspiration som
 - Ability to Upgrade a user profile to Premium, uses Stripe
 - Secure payments with stripe
 
+-The merch store is based on the boutique ado project by code institute
+    - Back end code handling
+    -some front end pages
+    -comments added to pages to annotate code from this project
+
 
 
 ### Features Left to Implement
