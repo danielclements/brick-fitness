@@ -12,7 +12,7 @@ My design philosophy for this project was to keep everything simple for the user
 some elements of the UI are incomplete as I ran out of time on the submission Date.
 
 
-[Wireframes / Mockups!]()
+[Wireframes / Mockups!](https://github.com/danielclements/brick-fitness/blob/master/README/brick.pdf)
 
 ## Features
 
@@ -24,11 +24,20 @@ some elements of the UI are incomplete as I ran out of time on the submission Da
     - User Profile is created on user creation
 
 - Purchase merch from the merch store
-- subscribe to Premium Workout plans and free Meal Plans
-- subscribe to Premium Meal plan and  free Meal plans
-- Profile page that displays active subscriptions
-- Secure payments with stripe
+    - user adds a product to the basket
+    - users clicks the cart
+    - user clicks checkout
+    - user fills out checkout forms
+    - redirect to Stripe
+    - captures payment intent allowing the purchase to complete
+- subscribe to Premium and free  Plans
+     - User Navigates to either meal or workout plans view
+     - user clicks Activate plan
+     - redirect to Profile page showing currently active plan
+- Profile page that displays if the User has subscriber to a premium Account
 - Ability to Upgrade a user profile to Premium, uses Stripe
+- Secure payments with stripe
+
 
 
 ### Features Left to Implement
@@ -76,7 +85,7 @@ some elements of the UI are incomplete as I ran out of time on the submission Da
 - Dj_database_url
 ## Database Schema
 
-[Database schema](https://github.com/danielclements/game_score.gg/blob/master/readme/Game_Score.png)
+![DB Schema](https://raw.githubusercontent.com/danielclements/brick-fitness/master/README/Brick_fitness.png)
 
 ### Browsers used for testing:
 
