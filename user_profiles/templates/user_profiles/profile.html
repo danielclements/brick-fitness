@@ -36,7 +36,9 @@
                          <div class="d-flex justify-content-center">
                              <img class="w-75" src="{{ profile.active_meal_plan.plan_thumb_nail.url }}" alt="MealPlanThumb">
                          </div>
-
+                         <div class="d-flex justify-content-center">
+                            <a href="{% url 'individual_plans' profile.active_meal_plan.id %}" class="btn btn-grn plan-button w-75">View Plan</a>
+                         </div>
                      </div>
                      <div class="col-6">
                          <h5 class="text-center text-light">Work Out Plan </h5>
