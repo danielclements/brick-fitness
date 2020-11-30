@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['brick-fitness.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['brick-fitness.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -129,8 +129,12 @@ if 'DATABASE_URL' in os.environ:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'brick-fitness',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'localhost',
+            'PORT': '5432',
         }
     }
 
