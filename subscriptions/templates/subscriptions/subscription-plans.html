@@ -25,7 +25,6 @@
                             <li class=""><i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Premium Workout Plans</li>
                             <li class=""><i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10% Store Discount</li>
                             <li class=""><i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free Delivery</li>
-                            <a href="{% url 'subscription-type' %}" class="card-link">Sign Up!</a>
                         </ul>
                     </div>
                 </div>
@@ -36,7 +35,7 @@
                     <div class="card pro-card sub-cards">
                         <div class="card-body">
                             <h4 class="card-title text-center text-white">Pro</h4>
-                            <h2 class="card-subtitle mb-2 text-white text-center">£8.99</h2>
+                            <h2 class="card-subtitle mb-2 text-white text-center">£29.99</h2>
                             <p class="card-text text-white">Includes premium meal plans, workout plans and a 10% store discount.</p>
                         </div>
                     </div>
@@ -48,11 +47,35 @@
                             <li class=""><i class="fas fa-check text-success"></i>&nbsp;&nbsp;&nbsp;Premium Workout Plans</li>                    
                             <li class=""><i class="fas fa-check text-success"></i>&nbsp;&nbsp;&nbsp;10% Store Discount</li>
                             <li class=""><i class="fas fa-check text-success"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free Delivery</li>
-                            <a href="{% url 'subscription-type' %}" class="card-link">Sign Up!</a>
                         </ul>
+                        <a href="#" id="buy_now_btn" class="btn btn-primary">Buy Now</a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+            const buy_now_button = document.querySelector('#buy_now_btn')
+
+            buy_now_button.addEventListener('click', event => {
+              fetch('/checkout/')
+              .then((result) => { return result.json() })
+              .then((data) => {
+                var stripe = Stripe(data.stripe_public_key);
+
+                stripe.redirectToCheckout({
+                // Make the id field from the Checkout Session creation API response
+                // available to this file, so you can provide it as parameter here
+                // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+                  sessionId: data.session_id
+                }).then(function (result) {
+                  // If `redirectToCheckout` fails due to a browser or network
+                  // error, display the localized error message to your customer
+                  // using `result.error.message`.
+                });
+              })
+            })
+          </script>
     </section>
 {% endblock %}
