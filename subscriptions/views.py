@@ -1,5 +1,5 @@
 import stripe
-import logging
+
 
 from django.shortcuts import render, redirect
 from django.conf import settings
@@ -7,7 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 from user_profiles.models import Profile
 from django.contrib.auth.decorators import login_required
 
-logger = logging.getLogger(__name__)
 
 
 # Create your views here.
