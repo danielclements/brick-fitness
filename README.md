@@ -38,7 +38,7 @@ some elements of the UI are incomplete as I ran out of time on the submission Da
 - premium users to be able to save progress on plans
 - Premium users to be able to upload a custom Profile Picture
 - Social Media Like Feed to show off your progress free for all users
-- 
+- Calorie Tracking Implementation
 
 ## Technologies Used
 
@@ -95,7 +95,7 @@ some elements of the UI are incomplete as I ran out of time on the submission Da
 
 ### Bugs:
 - Mobile views are not fully implemented, as a result some pages only display properly on desktop, this is due to running out of time on the submission date
-
+- User can subscribe to premium plans even if they are not currently a active subscriber
 
 
 ## Deployment
@@ -140,7 +140,7 @@ The follow config_vars are defined in heroku
     1. Open terminal in preferred IDE.
     2. Type "git clone https://github.com/danielclements/game_score.gg"
     3. This command will install the dependencies for this project: pip install -r requirements.txt
-    4. In the terminal write 'pyhton app.py' to run the application.
+    4. In the terminal write 'python app.py' to run the application.
     
 If running this project locally you will need to add a file call 'env.py', with the following values:
   - DATABASE_URL
@@ -162,27 +162,19 @@ If running this project locally you will need to add a file call 'env.py', with 
 
 ### Acknowledgements
 
-- I used code by []() 
+- Illustrations [undraw](https://undraw.co/illustrations) 
 
-- Password requirements by []()
+- Background gradients by [Gradient Magic](https://www.gradientmagic.com/)
 
-- Multiple select from [](n)
+- Mcolor changing Navbar[StackOverflow](https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling)
 
-- Authentication and login provided by[]()
+- Original Locin Page Design[sefyudem](https://github.com/sefyudem/Responsive-Login-Form )
 
 - Message flashing tutorial by []()
 
-- review score slider by []()
+- Help with extending user profile and Send/Receive signals [SimpleIsBetter](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 
-Live version of the site : 
+- Stripe Payment intent creation [Alex Ford](http://www.fordsdevelopment.co.uk/)
 
+- Database Model Queries [Dennis Ivy](https://www.youtube.com/watch?v=PD3YnPSHC-c&t=335s)
 
-https://undraw.co/illustrations SVG illustrations 
-
-https://www.gradientmagic.com/ Background gradients
-
-Code for color changing Navbar was taken from Stack Overflow. https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
-
-https://github.com/sefyudem/Responsive-Login-Form lOGIN PAGE original idea from 
-
-https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html helped with the user profile creation and send/recieve signals
