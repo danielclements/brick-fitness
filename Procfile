@@ -1,0 +1,1 @@
+1	web: gunicorn brick_fitness.wsgi:application
