@@ -1,12 +1,14 @@
 import stripe
 import logging
+import json
 from django.shortcuts import render
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
-from subscriptions.payments.stripe import (SubPlan, set_paid_until)
+from subscriptions.payments.stripe import SubPlan
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+from subscriptions.webhook_handler import StripeWH_Handler
 
 API_KEY = settings.STRIPE_SECRET_KEY
 logger = logging.getLogger(__name__)
@@ -26,38 +28,45 @@ def subscription_selection(request):
     return render(request, 'subscriptions/subscription_type.html')
 
 
-# Stripe payments with django on youtube by DjangoLessons,
-# Please visit readme to find a link to this channel
-
+# stripe docs code, slightly altered using code
+# from Code Institute stripe tutorial
 @require_POST
 @csrf_exempt
-def stripe_webhooks(request):
-
+def my_webhook_view(request):
     payload = request.body
-    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+    event = None
 
     try:
-        event = stripe.Webhook.construct_event(
-            payload, sig_header, settings.STRIPE_WEBHOOK_SIGNING_KEY
+        event = stripe.Event.construct_from(
+            json.loads(payload), stripe.api_key
         )
-        logger.info("Event constructed correctly")
-    except ValueError:
+    except ValueError as e:
         # Invalid payload
-        logger.warning("Invalid Payload")
         return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError:
+    except stripe.error.SignatureVerificationError as e:
         # Invalid signature
-        logger.warning("Invalid signature")
         return HttpResponse(status=400)
 
-    # Handle the event
-    if event.type == 'charge.succeeded':
-        # object has  payment_intent attr
-        set_paid_until(event.data.object)
+    except Exception as e:
+        return HttpResponse(content=e, status=400)
 
-    return HttpResponse(status=200)
+    # Set up webhook handler
+    handler = StripeWH_Handler(request)
+
+    event_map = {
+        'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
+        'payment_intent.failed': handler.handle_payment_intent_failed,
+    }
+
+    event_type = event['type']
+    event_handler = event_map.get(event_type, handler.handle_event)
+
+    response = event_handler(event)
+    return response
 
 
+# Stripe payments with django on youtube by DjangoLessons,
+# Please visit readme to find a link to this channel
 @require_POST
 @login_required
 def payment_method(request):
