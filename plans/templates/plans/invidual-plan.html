@@ -43,7 +43,7 @@
                               <div class="collapse" id="collapse1">
                                   <div class="card card-body">
                                       {% for meal in plan.Monday.all %}
-                                        {% if meal.meal_type.meal_type == 'BreakFast' %}
+                                        {% if meal.meal_type.meal_type == 'Breakfast' %}
                                             <h6 class="text-center"> Meal</h6>
                                              <p>{{ meal.name }} | Calories: {{ meal.calories }}</p>
                                             <h6 class="text-center"> Ingredients</h6>
