@@ -108,6 +108,7 @@ some elements of the UI are incomplete as I ran out of time on the submission Da
 - Mobile views are not fully implemented, as a result some pages only display properly on desktop, this is due to running out of time on the submission date
 - User can subscribe to premium plans even if they are not currently a active subscriber
 - mealplans sometime fails to render the mail names dropdown box
+- google email client doesnt dispay the correct sender name
 
 
 ## Deployment
