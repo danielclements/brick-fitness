@@ -11,7 +11,9 @@ I got the idea for this project as i was trying to become a lot healthier as I h
 ## UX
  
 My design philosophy for this project was to keep everything simple for the user side of the site. 
-I wanted people to visit the site and discover new meals/workout inspiration some elements of the UI are incomplete as I ran out of time on the submission Date.
+I wanted people to visit the site and discover new meals/workout inspiration some elements of the UI are incomplete.
+
+Further updartes to be pushed in the coming weeks
 
 
 [Wireframes / Mockups!](https://github.com/danielclements/brick-fitness/blob/master/README/brick.pdf)
