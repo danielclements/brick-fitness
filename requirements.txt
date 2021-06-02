@@ -28,4 +28,4 @@ six==1.15.0
 sqlparse==0.3.1
 Strip==0.0.1.dev14
 stripe==2.55.0
-urllib3==1.25.11
+urllib3==1.26.5
